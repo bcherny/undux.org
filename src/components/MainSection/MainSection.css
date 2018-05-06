@@ -1,0 +1,12 @@
+.MainSection {
+  padding: 40px;
+  position: fixed;
+    bottom: 0;
+    left: 300px;
+    right: 0;
+    top: 0;
+}
+
+.MainSection .Logo {
+  width: 400px;
+}

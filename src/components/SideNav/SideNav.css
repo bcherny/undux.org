@@ -1,0 +1,9 @@
+.SideNav {
+  background: #f9f9f9;
+  box-shadow: inset -5px 0 30px rgba(0,0,0,.02);
+  position: fixed;
+    bottom: 0;
+    left: 0;
+    top: 0;
+  width: 300px;
+}

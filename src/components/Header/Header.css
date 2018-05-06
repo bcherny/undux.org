@@ -1,0 +1,9 @@
+.Header .Logo {
+  width: 400px;
+}
+
+.Header h2 {
+  color: #666;
+  font-weight: 400;
+  line-height: 40px;
+}

@@ -1,0 +1,14 @@
+.Tabs {
+
+}
+
+.Tabs .Tab {
+  display: inline;
+  list-style: none;
+}
+
+.Tabs .Tab a {
+  color: #313840;
+  display: inline-block;
+  padding: 4px 8px;
+}
