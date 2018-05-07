@@ -1,1 +1,7 @@
 .Docs {}
+
+.Docs p {
+  color: #6f7986;
+  font-size: 18px;
+  margin: 20px 0;
+}

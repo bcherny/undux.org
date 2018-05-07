@@ -1,13 +1,13 @@
 import { connect, createStore, Store } from 'undux'
 import { Language } from './datatypes'
-import { withEffects } from './effects';
+import { withEffects } from './effects'
 
 export type State = {
   language: Language
 }
 
 let initialState: State = {
-  language: 'TypeScript'
+  language: 'JavaScript (ES6)'
 }
 
 let initialStateFromLocalStorage = localStorage.getItem('undux-store')
