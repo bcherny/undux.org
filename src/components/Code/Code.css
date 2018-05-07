@@ -1,3 +1,14 @@
-.Code {
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../../fonts/FiraCode-Regular-webfont.woff') format('woff');
+}
 
+.Code {
+}
+
+.Code .CodeBlock code {
+  font: 22px/30px 'Fira Code', Menlo, 'DejaVu Sans Mono', Monaco, 'Courier New', Courier, monospace;
+  white-space: pre;
 }

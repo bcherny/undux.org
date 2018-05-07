@@ -27,7 +27,7 @@ module.exports = (config, env) => {
                 } catch (__) {}
               }
 
-              return '' // use external default escaping
+              return str
             },
             smartypants: true,
           }

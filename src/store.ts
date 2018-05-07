@@ -1,4 +1,4 @@
-import { connect, createStore } from 'undux'
+import { connect, createStore, Store } from 'undux'
 import { Language } from './datatypes'
 
 type State = {
@@ -10,3 +10,7 @@ let store = createStore<State>({
 })
 
 export let withStore = connect(store)
+
+export type StoreProps = {
+  store: Store<State>
+}

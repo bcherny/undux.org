@@ -1,5 +1,4 @@
 .Tabs {
-
 }
 
 .Tabs .Tab {
@@ -8,7 +7,20 @@
 }
 
 .Tabs .Tab a {
-  color: #313840;
+  border-radius: 20px;
+  border: 2px solid #fff; /* spacing */
+  color: #70757b;
   display: inline-block;
-  padding: 4px 8px;
+  padding: 4px 12px;
+  text-decoration: none;
+}
+
+.Tabs .Tab a:hover {
+  background: #eff3f7;
+}
+
+.Tabs .Tab.-Active a {
+  background: #97a5b7;
+  box-shadow: inset 2px 2px 2px rgba(0,0,0,.05);
+  color: #fff;
 }
