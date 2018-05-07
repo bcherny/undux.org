@@ -11,9 +11,11 @@ let languages: Language[] = [
 ]
 
 export let LanguageToggler = withStore(({ store }) =>
-  <Tabs
-    activeItem={store.get('language')}
-    items={languages}
-    onClick={store.set('language')}
-  />
+  <div className='LanguageToggler'>
+    <Tabs
+      activeItem={store.get('language')}
+      items={languages}
+      onClick={store.set('language')}
+    />
+  </div>
 )

@@ -23,8 +23,8 @@ export let Code = withStore<Props>(({ code, store }) => {
   return <div className='Code'>
     <LanguageToggler />
     <h3 className='Missing'>Not written yet</h3>
-    // TODO: Exact link
-    <h4 className='MissingSub'><a href='https://github.com/bcherny/undux.org/tree/master/src/copy'>Want to add it?</a></h4>
+    {/* TODO: Exact link*/}
+    <h4 className='MissingSub'><a href='https://github.com/bcherny/undux.org/tree/master/src/copy'>Submit a Pull Request 🙏</a></h4>
   </div>
 })
 

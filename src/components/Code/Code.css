@@ -6,9 +6,35 @@
 }
 
 .Code {
+  background: #f9f9f9;
+  padding: 40px;
+}
+
+.Code .LanguageToggler {
+  background: #d5dbe4;
+  margin: -40px -40px 40px;
+  padding: 10px 20px;
+  text-align: right;
 }
 
 .Code .CodeBlock code {
-  font: 22px/30px 'Fira Code', Menlo, 'DejaVu Sans Mono', Monaco, 'Courier New', Courier, monospace;
+  font: 18px/26px 'Fira Code', Menlo, 'DejaVu Sans Mono', Monaco, 'Courier New', Courier, monospace;
   white-space: pre;
+}
+
+.Code .Missing {
+  color: #b0b7c1;
+  font-size: 48px;
+  line-height: 64px;
+  text-align: center;
+}
+
+.Code .MissingSub a {
+  color: #d5dbe4;
+  display: block;
+  font-size: 24px;
+  font-weight: 200;
+  line-height: 64px;
+  text-align: center;
+  text-decoration: none;
 }

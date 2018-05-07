@@ -1,0 +1,21 @@
+.SectionHeading {
+  font-size: 36px;
+  margin: 80px 0 40px;
+  position: relative;
+}
+
+.SectionHeading:before {
+  color: #c6c9ce;
+  content: '#';
+  font-size: 52px;
+  font-weight: 100;
+  padding-right: 20px;
+  position: absolute;
+    right: 100%;
+}
+
+.SectionHeading a {
+  color: #313840;
+  display: block;
+  text-decoration: none;
+}
