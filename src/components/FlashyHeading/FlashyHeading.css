@@ -1,0 +1,15 @@
+.FlashyHeading {
+  display: block;
+  margin: 40px;
+  text-align: center;
+}
+
+.FlashyHeading h3 {
+  border-bottom: 2px solid #1e4475;
+  color: #1e4475;
+  display: inline-block;
+  font-size: 48px;
+  font-style: italic;
+  font-weight: 200;
+  line-height: 64px;
+}
