@@ -7,3 +7,16 @@
     right: 0;
     top: 0;
 }
+
+.MainSection .Docs .Code {
+  margin: 0 -80px;
+}
+
+.MainSection .Docs .Code .CodeBlock {
+  display: block;
+  margin: 0 40px;
+}
+
+.MainSection .Docs .Code .LanguageToggler {
+  padding-right: 80px;
+}

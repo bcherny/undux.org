@@ -14,6 +14,11 @@ export const MainSection = withStore(class extends React.Component<Props> {
       return
     }
     element.scrollTop = this.props.store.get('windowScrollTop')
+
+    this.props.store.on('windowScrollTop')
+      .subscribe(_ => {
+      element.scrollTop = _
+    })
   }
 
   onScroll = (e: UIEvent<HTMLElement>) =>
