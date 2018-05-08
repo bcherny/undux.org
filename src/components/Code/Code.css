@@ -1,10 +1,8 @@
 .Code {
-  background: #f9f9f9;
   padding: 40px;
 }
 
 .Code .LanguageToggler {
-  background: #d5dbe4;
   margin: -40px -40px 40px;
   padding: 10px 20px;
   text-align: right;

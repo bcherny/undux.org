@@ -1,4 +1,5 @@
 .Header .Logo {
+  filter: greyscale(1);
   width: 400px;
 }
 

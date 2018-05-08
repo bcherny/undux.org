@@ -2,8 +2,7 @@
 
 .Docs p {
   color: #6f7986;
-  font-size: 16px;
-  line-height: 26px;
+  font: 24px/30px Georgia;
   margin: 20px 0;
   max-width: 850px;
 }
