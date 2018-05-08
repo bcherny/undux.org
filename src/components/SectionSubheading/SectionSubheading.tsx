@@ -1,10 +1,5 @@
 import * as React from 'react'
 import './SectionSubheading.css'
 
-type Props = {
-  text: string
-}
-
-export function SectionSubheading({ text }: Props) {
-  return <h3 className='SectionSubheading'>{text}</h3>
-}
+export const SectionSubheading: React.StatelessComponent = props =>
+  <h3 className='SectionSubheading'>{props.children}</h3>

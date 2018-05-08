@@ -15,17 +15,30 @@ import './Docs.css'
 export function Docs() {
   return <section className='Docs'>
 
-    <SectionHeading text='Quick Start' />
-    <SectionSubheading text='1. Create a store' />
-    <Code code={QuickStartStep1} />
-    <p><em>Be sure to define a key for each value in your model, even if the value is initially <InlineCode code='undefined' />.</em></p>
+    <SectionHeading text='Jump to API' />
 
-    <SectionSubheading text='2. Connect your React components' />
+    <ul>
+      <li><a href='#get'><InlineCode>#get(key)</InlineCode></a></li>
+      <li><a href='#set'><InlineCode>#set(key, value)</InlineCode></a></li>
+      <li><a href='#on'><InlineCode>#on(key)</InlineCode></a></li>
+    </ul>
+
+    <SectionHeading text='Quick Start' />
+    <SectionSubheading>1. Create a store</SectionSubheading>
+    <Code code={QuickStartStep1} />
+    <p><em>Be sure to define a key for each value in your model, even if the value is initially <InlineCode>undefined</InlineCode>.</em></p>
+
+    <SectionSubheading>2. Connect your React components</SectionSubheading>
     <Code code={QuickStartStep2} />
     <FlashyHeading>That's all there is to it.</FlashyHeading>
 
+    <SectionHeading text='API' />
+    <SectionSubheading>Get</SectionSubheading>
+    <SectionSubheading>Set</SectionSubheading>
+    <SectionSubheading>On</SectionSubheading>
+
     <SectionHeading text='Features' />
-    <SectionSubheading text='Effects' />
+    <SectionSubheading>Effects</SectionSubheading>
     <p>Undux automatically updates your model and re-renders your React components for you. But you can also listen on and react to model updates directly.</p>
     <Code code={EffectsSimple} />
     <p>You can even trigger a model update in response to a model update.</p>
@@ -38,17 +51,17 @@ export function Docs() {
     <Code code={Plugins} />
 
     <SectionHeading text='Design Philosophy' />
-    <SectionSubheading text='Goal #1 is total type-safety.' />
+    <SectionSubheading>Goal #1 is total type-safety.</SectionSubheading>
 
     <p>Getting, setting, reading, and listening on model updates is 100% type-safe: use a key that isn't defined in your model or set a key to the wrong type, and you'll get a compile-time error. And connected components are just as type-safe.</p>
 
-    <SectionSubheading text='Goal #2 is letting you write as little boilerplate as possible.' />
+    <SectionSubheading>Goal #2 is letting you write as little boilerplate as possible.</SectionSubheading>
 
     <p>Undux is like Redux, but reducers are already baked-in. Undux automatically creates an action and a reducer for each key on your state, so you don't have to write tedious boilerplate. Undux still emits Actions under the hood (which you can listen on to produce effects), but gives you an incredibly simple get/set API that covers most use cases.</p>
 
     <p>If you're using Undux with the provided React connector, Undux will update your React component any time a reducer fires (just like React-Redux). You can optionally filter on specific state keys that you care about for more targeted updates.</p>
 
-    <SectionSubheading text='Goal #3 is familiar abstractions.' />
+    <SectionSubheading>Goal #3 is familiar abstractions.</SectionSubheading>
 
     <p>No need to learn about Actions, Reducers, or any of that. Just call get and set, and everything works just as you expect.</p>
 

@@ -1,6 +1,6 @@
 .InlineCode {
   background: #f9f9f9;
-  font: 18px/26px 'Fira Code', Menlo, 'DejaVu Sans Mono', Monaco, 'Courier New', Courier, monospace;
+  font-family: 'Fira Code', Menlo, 'DejaVu Sans Mono', Monaco, 'Courier New', Courier, monospace;
   padding: 0 6px;
   white-space: pre;
 }
