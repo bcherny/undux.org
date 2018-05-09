@@ -4,7 +4,9 @@ import './Header.css'
 
 export function Header() {
   return <header className='Header'>
-    <img alt='Undux' className='Logo' src={logo} />
+    <span className='Logo'>
+      <img alt='Undux' src={logo} />
+    </span>
     <h2>Dead simple state management for React</h2>
   </header>
 }

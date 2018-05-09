@@ -1,14 +1,16 @@
 import { connect, createStore, Store } from 'undux'
-import { Language } from './datatypes'
+import { Language, Route } from './datatypes'
 import { withEffects } from './effects'
 
 export type State = {
   language: Language
+  route: Route
   windowScrollTop: number
 }
 
 let initialState: State = {
   language: 'JavaScript (ES6)',
+  route: '',
   windowScrollTop: 0
 }
 

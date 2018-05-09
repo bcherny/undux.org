@@ -1,0 +1,19 @@
+.SplashNav {
+  padding: 50px;
+}
+
+.SplashNav li {
+  display: inline;
+  list-style: none;
+}
+
+.SplashNav a {
+  display: inline-block;
+  font-size: 2em;
+  padding: 20px;
+}
+
+.SplashNav a .Icon {
+  margin-bottom: -10px;
+  padding-right: 5px;
+}

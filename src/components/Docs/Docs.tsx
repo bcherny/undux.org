@@ -5,9 +5,9 @@ import EffectsSimple from '../../copy/EffectsSimple.md'
 import Plugins from '../../copy/Plugins.md'
 import QuickStartStep1 from '../../copy/QuickStartStep1.md'
 import QuickStartStep2 from '../../copy/QuickStartStep2.md'
-import { Code } from '../Code/Code'
 import { FlashyHeading } from '../FlashyHeading/FlashyHeading'
 import { InlineCode } from '../InlineCode/InlineCode'
+import { PolyglotCode } from '../PolyglotCode/PolyglotCode'
 import { SectionHeading } from '../SectionHeading/SectionHeading'
 import { SectionSubheading } from '../SectionSubheading/SectionSubheading'
 import './Docs.css'
@@ -25,30 +25,31 @@ export function Docs() {
 
     <SectionHeading text='Quick Start' />
     <SectionSubheading>1. Create a store</SectionSubheading>
-    <Code code={QuickStartStep1} />
+    <PolyglotCode code={QuickStartStep1} />
     <p><em>Be sure to define a key for each value in your model, even if the value is initially <InlineCode>undefined</InlineCode>.</em></p>
 
     <SectionSubheading>2. Connect your React components</SectionSubheading>
-    <Code code={QuickStartStep2} />
+    <PolyglotCode code={QuickStartStep2} />
     <FlashyHeading>That's all there is to it.</FlashyHeading>
 
     <SectionHeading text='API' />
     <SectionSubheading>Get</SectionSubheading>
+
     <SectionSubheading>Set</SectionSubheading>
     <SectionSubheading>On</SectionSubheading>
 
     <SectionHeading text='Features' />
     <SectionSubheading>Effects</SectionSubheading>
     <p>Undux automatically updates your model and re-renders your React components for you. But you can also listen on and react to model updates directly.</p>
-    <Code code={EffectsSimple} />
+    <PolyglotCode code={EffectsSimple} />
     <p>You can even trigger a model update in response to a model update.</p>
-    <Code code={EffectsModelUpdate} />
+    <PolyglotCode code={EffectsModelUpdate} />
     <p>Undux subscriptions are full <a target='_blank' href='http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html'>Rx Observables</a>, so you have fine control over how you react to a change.</p>
-    <Code code={EffectsRxSimple} />
+    <PolyglotCode code={EffectsRxSimple} />
 
     <SectionHeading text='Plugins' />
     <p>Undux is easy to modify with plugins (also called "higher order stores"). Just define a function that takes a store as an argument and returns a store, adding listeners along the way. For convenience, Undux supports two types of listeners for plugins.</p>
-    <Code code={Plugins} />
+    <PolyglotCode code={Plugins} />
 
     <SectionHeading text='Design Philosophy' />
     <SectionSubheading>Goal #1 is total type-safety.</SectionSubheading>

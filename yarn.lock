@@ -94,6 +94,10 @@
   version "0.0.29"
   resolved "https://registry.yarnpkg.com/@types/debug/-/debug-0.0.29.tgz#a1e514adfbd92f03a224ba54d693111dbf1f3754"
 
+"@types/feather-icons@^4.7.0":
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/@types/feather-icons/-/feather-icons-4.7.0.tgz#ec66bc046bcd1513835f87541ecef54b50c57ec9"
+
 "@types/jest@^22.2.3":
   version "22.2.3"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-22.2.3.tgz#0157c0316dc3722c43a7b71de3fdf3acbccef10d"
@@ -1616,6 +1620,10 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
+classnames@^2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
+
 clean-css@4.1.x:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.1.11.tgz#2ecdf145aba38f54740f26cefd0ff3e03e125d6a"
@@ -2999,6 +3007,12 @@ fbjs@^0.8.16:
     promise "^7.1.1"
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.9"
+
+feather-icons@^4.7.0:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/feather-icons/-/feather-icons-4.7.0.tgz#78b4c78022f091b94e57b1b6fc81721a76387cfd"
+  dependencies:
+    classnames "^2.2.5"
 
 figures@^2.0.0:
   version "2.0.0"
@@ -6495,6 +6509,10 @@ react-dom@^16.3.2:
 react-error-overlay@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"
+
+react-feather@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-feather/-/react-feather-1.1.0.tgz#f0aa692497de952237ca1f3b118ebcb5427152e1"
 
 react-scripts-ts@2.15.1:
   version "2.15.1"
