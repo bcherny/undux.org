@@ -12,9 +12,12 @@
   margin-top: -40px;
 }
 
-.Code .CodeBlock code {
+.Code .CodeBlock code,
+.Code .CodeBlock input {
+  background: transparent;
   font: 18px/26px 'Fira Code', Menlo, 'DejaVu Sans Mono', Monaco, 'Courier New', Courier, monospace;
   white-space: pre;
+  -webkit-appearance: none;
 }
 
 .Code .Missing {

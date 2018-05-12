@@ -13,7 +13,8 @@ let routes = {
     <SplashNav />
   </div>,
   api: <MainSection />,
-  docs:  <MainSection />
+  'quick-start': <MainSection />,
+  theory: <MainSection />
 }
 
 export function App() {
