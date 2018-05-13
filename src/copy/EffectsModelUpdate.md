@@ -3,7 +3,7 @@ ts
 store
   .on('today')
   .subscribe(value => {
-    const tomorrow = new Date(value)
+    let tomorrow = new Date(value)
     tomorrow.setDate(value.getDate() + 1)
     store.set('tomorrow')(tomorrow)
   })
@@ -14,7 +14,7 @@ flow
 store
   .on('today')
   .subscribe(value => {
-    const tomorrow = new Date(value)
+    let tomorrow = new Date(value)
     tomorrow.setDate(value.getDate() + 1)
     store.set('tomorrow')(tomorrow)
   })
@@ -25,7 +25,7 @@ es6
 store
   .on('today')
   .subscribe(value => {
-    const tomorrow = new Date(value)
+    let tomorrow = new Date(value)
     tomorrow.setDate(value.getDate() + 1)
     store.set('tomorrow')(tomorrow)
   })

@@ -1,13 +1,13 @@
 import * as React from 'react'
-import './SectionHeading.css'
+import './PageHeading.css'
 
 type Props = {
   text: string
 }
 
-export function SectionHeading({ text }: Props) {
+export function PageHeading({ text }: Props) {
   let href = toHref(text)
-  return <h2 className='SectionHeading'>
+  return <h2 className='PageHeading'>
     <a href={'#' + href} id={href}>{text}</a>
   </h2>
 }

@@ -1,6 +1,5 @@
 .SectionHeading {
   font-size: 36px;
-  margin-left: 40px;
   position: relative;
 }
 
@@ -8,4 +7,13 @@
   color: #313840;
   display: block;
   text-decoration: none;
+}
+
+.SectionHeading:hover:before {
+  color: #c6c9ce;
+  content: '#';
+  font-weight: 100;
+  padding-right: 10px;
+  position: absolute;
+    right: 100%;
 }
