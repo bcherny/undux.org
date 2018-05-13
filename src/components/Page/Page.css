@@ -1,0 +1,30 @@
+.Page .PageTitle {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  position: absolute;
+    left: 300px;
+    right: 0;
+    top: 0;
+  z-index: 1;
+}
+
+.Page .PageTitle h2 {
+}
+
+.Page .LanguageToggler {
+}
+
+.Page .MainSection {
+  top: 110px;
+}
+
+.Page .MainSection > * {
+  max-width: 850px;
+}
+
+.Page p {
+  color: #6f7986;
+  margin: 20px 0;
+}

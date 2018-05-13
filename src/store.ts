@@ -5,13 +5,13 @@ import { withEffects } from './effects'
 export type State = {
   language: Language
   route: Route
-  windowScrollTop: number
+  scrollTop: number
 }
 
 let initialState: State = {
   language: 'JavaScript (ES6)',
   route: '',
-  windowScrollTop: 0
+  scrollTop: 0
 }
 
 let initialStateFromLocalStorage = localStorage.getItem('undux-store')

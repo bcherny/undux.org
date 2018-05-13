@@ -7998,9 +7998,9 @@ underscore@~1.4.4:
   version "1.4.4"
   resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.4.4.tgz#61a6a32010622afa07963bf325203cf12239d604"
 
-undux@^4.3.1:
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/undux/-/undux-4.3.1.tgz#6a20db3ea3a7aa32c37691628f6718e34b6a6f1c"
+undux@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/undux/-/undux-4.4.0.tgz#64aee1012ee211d303146122aa36423b291ca95d"
   dependencies:
     typed-rx-emitter "^1.1.1"
 

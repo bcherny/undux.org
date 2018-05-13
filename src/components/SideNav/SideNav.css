@@ -8,3 +8,23 @@
     top: 0;
   width: 300px;
 }
+
+.SideNav .Logo {
+  margin: 30px auto;
+  width: 80%;
+}
+
+.SideNav a {
+  cursor: pointer;
+  display: block;
+  padding: 15px 20px;
+}
+
+.SideNav a:hover,
+.SideNav a.-Active {
+  background: #eee;
+}
+
+.SideNav a.-Active {
+  font-weight: 600;
+}

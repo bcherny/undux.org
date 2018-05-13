@@ -1,0 +1,13 @@
+.Logo {
+  display: block;
+  max-height: 100px;
+}
+
+.Logo.-Grayscale {
+  filter: grayscale(1);
+}
+
+.Logo img {
+  max-height: 100%;
+  max-width: 100%;
+}

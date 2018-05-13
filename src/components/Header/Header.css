@@ -10,12 +10,7 @@
 
 .Header .Logo {
   flex: 1;
-  max-height: 100px;
   width: 400px;
-}
-
-.Header .Logo img {
-  height: 100%;
 }
 
 .Header h2 {

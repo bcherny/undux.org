@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { UIEvent } from 'react'
 import { StoreProps, withStore } from '../../store'
-import { Docs } from '../Docs/Docs'
 import './MainSection.css'
 
 type Props = StoreProps
@@ -12,16 +11,16 @@ export const MainSection = withStore(class extends React.Component<Props> {
     if (!element) {
       return
     }
-    element.scrollTop = this.props.store.get('windowScrollTop')
+    element.scrollTop = this.props.store.get('scrollTop')
 
-    this.props.store.on('windowScrollTop')
+    this.props.store.on('scrollTop')
       .subscribe(_ => {
       element.scrollTop = _
     })
   }
 
   onScroll = (e: UIEvent<HTMLElement>) =>
-    this.props.store.set('windowScrollTop')(e.currentTarget.scrollTop)
+    this.props.store.set('scrollTop')(e.currentTarget.scrollTop)
 
   render() {
     return <section
@@ -29,7 +28,7 @@ export const MainSection = withStore(class extends React.Component<Props> {
       onScroll={this.onScroll}
       ref={this.onRender}
     >
-      <Docs />
+      {this.props.children}
     </section >
   }
 })

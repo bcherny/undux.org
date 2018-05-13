@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 @font-face {
   font-family: 'Fira Code';
   font-style: normal;
@@ -21,14 +23,15 @@ body,
 }
 
 .App {
-  background: #f9f9f9;
   color: #313840;
-  font: 13px/21px 'Fira Code', Menlo, 'DejaVu Sans Mono', Monaco, 'Courier New', Courier, monospace;
+  font: 18px/30px Roboto, Helvetica, Arial, sans-serif;
+  /* font: 13px/21px 'Fira Code', Menlo, 'DejaVu Sans Mono', Monaco, 'Courier New', Courier, monospace; */
 }
 
 .SplashPage {
   align-items: center;
   display: flex;
+  font-family: 'Fira Code', Menlo, 'DejaVu Sans Mono', Monaco, 'Courier New', Courier, monospace;
   flex-direction: column;
   justify-content: center;
   position: fixed;
@@ -44,7 +47,7 @@ body,
 
 .SplashPage .SplashInstallInfo {
   background: #e4e8ec;
-  flex: 1;
+  flex-grow: 0;
   font-size: 2em;
 }
 

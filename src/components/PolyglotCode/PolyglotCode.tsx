@@ -2,7 +2,6 @@ import 'highlight.js/styles/github.css'
 import * as React from 'react'
 import { Language } from '../../datatypes'
 import { StoreProps, withStore } from '../../store'
-import { LanguageToggler } from '../LanguageToggler/LanguageToggler'
 import './PolyglotCode.css'
 
 type Props = StoreProps & {
@@ -15,13 +14,11 @@ export let PolyglotCode = withStore<Props>(({ code, store }) => {
 
   if (language in blocks) {
     return <div className='Code'>
-      <LanguageToggler />
       <span className='CodeBlock' dangerouslySetInnerHTML={{ __html: blocks[language]!.innerHTML! }} />
     </div>
   }
 
   return <div className='Code'>
-    <LanguageToggler />
     <h3 className='Missing'>Not written yet</h3>
     {/* TODO: Exact link*/}
     <h4 className='MissingSub'><a href='https://github.com/bcherny/undux.org/tree/master/src/copy'>Submit a Pull Request 🙏</a></h4>

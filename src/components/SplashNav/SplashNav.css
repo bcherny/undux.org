@@ -8,9 +8,16 @@
 }
 
 .SplashNav a {
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
   display: inline-block;
   font-size: 2em;
   padding: 20px;
+  transition: border-color .1s ease-in-out;
+}
+
+.SplashNav a:hover {
+  border-color: #313840;
 }
 
 .SplashNav a .Icon {
