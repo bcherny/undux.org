@@ -2,22 +2,21 @@ ts
 ```ts
 import { createStore } from 'undux'
 
-// Let's start by creating a store.
+// Start by creating a store.
 let store = createStore({
   kittens: 12
 })
 
 // TypeScript inferred that the type of kittens is number.
-// We can read kittens back from the store.
+// You can read kittens back from the store.
 store.get('kittens') // 12
 
 // The store is totally covered with static types, so you can't
 // do illegal things like read a key that doesn't exist...
-store.get('oranges')
-// Compile Error: Argument of type '"oranges"' is not assignable
-// to parameter of type '"kittens"'.
+store.get('oranges') // Compile Error: Argument of type '"oranges"'
+                     // is not assignable to parameter of type '"kittens"'.
 
-// ...Or
+// ...Or do something invalid with a value.
 store.get('kittens').push(2)
 // Compile Error: Property 'push' does not exist on type 'number'.
 ```
@@ -26,13 +25,23 @@ flow
 ```js
 import { createStore } from 'undux'
 
-// Create a store
+// Start by creating a store.
 let store = createStore({
   kittens: 12
 })
 
+// Flow inferred that the type of kittens is number.
+// You can read kittens back from the store.
 store.get('kittens') // 12
-store.get('oranges') // undefined
+
+// The store is totally covered with static types, so you can't
+// do illegal things like read a key that doesn't exist...
+store.get('oranges') // Compile Error: Argument of type '"oranges"'
+                     // is not assignable to parameter of type '"kittens"'.
+
+// ...Or do something invalid with a value.
+store.get('kittens').push(2)
+// Compile Error: Property 'push' does not exist on type 'number'.
 ```
 
 es6
@@ -50,10 +59,10 @@ store.get('oranges') // undefined
 
 es5
 ```js
-var createStore = require('undux').createStore
+var undux = require('undux')
 
 // Create a store
-var store = createStore({
+var store = undux.createStore({
   kittens: 12
 })
 

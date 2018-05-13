@@ -1,17 +1,30 @@
 import * as React from 'react'
+import APIGet from '../../copy/APIGet.md'
+import APISet from '../../copy/APISet.md'
+import APISetPartialApplication from '../../copy/APISetPartialApplication.md'
 import EffectsModelUpdate from '../../copy/EffectsModelUpdate.md'
 import EffectsRxSimple from '../../copy/EffectsRxSimple.md'
 import EffectsSimple from '../../copy/EffectsSimple.md'
 import Plugins from '../../copy/Plugins.md'
+import { InlineCode } from '../InlineCode/InlineCode'
 import { PolyglotCode } from '../PolyglotCode/PolyglotCode'
 import { SectionHeading } from '../SectionHeading/SectionHeading'
 import { SectionSubheading } from '../SectionSubheading/SectionSubheading'
 
 export function Docs() {
   return <>
+    <SectionHeading text='API' />
     <SectionSubheading>Get</SectionSubheading>
+    <p>Use <InlineCode>get</InlineCode> to read the value of a field on your store.</p>
+    <PolyglotCode code={APIGet} />
     <SectionSubheading>Set</SectionSubheading>
+    <p>Use <InlineCode>set</InlineCode> to write a value to a field on your store.</p>
+    <PolyglotCode code={APISet} />
+    <p>Under the hood, Undux serializes all writes (like Flux and Redux do with Actions), so you can implement things like logging and time travel in just a few lines of code.</p>
+    <p><InlineCode>set</InlineCode> is auto-curried: if you call it with just a key, you get back a convenient setter function.</p>
+    <PolyglotCode code={APISetPartialApplication} />
     <SectionSubheading>On</SectionSubheading>
+    <p><InlineCode>on</InlineCode> is Undux's magic sauce ✨. Use it to listen to model updates in order to perform effects.</p>
 
     <SectionHeading text='Features' />
     <SectionSubheading>Effects</SectionSubheading>

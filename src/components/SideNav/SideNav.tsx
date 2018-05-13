@@ -7,7 +7,7 @@ import './SideNav.css'
 export let SideNav = withStore(({store}) =>
   <nav className='SideNav'>
     <a onClick={() => store.set('route')('')}>
-      <Logo grayscale />
+      <Logo />
     </a>
     <ul>
       {ROUTES.map(([route, text]) =>
