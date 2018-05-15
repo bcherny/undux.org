@@ -10,7 +10,15 @@ export const ROUTES: [Route, string][] = [
 
 export const SUBROUTES: Record<Route, [string, string][]> = {
   '': [],
-  api: [['createStore', 'createStore'], ['connect', 'connect'], ['get', 'get'], ['set', 'set'], ['on', 'on'], ['before', 'before'], ['onAll', 'onAll']],
+  api: [
+    ['createStore', 'createStore'],
+    ['connect', 'connect'],
+    ['get', 'store.get'],
+    ['set', 'store.set'],
+    ['on', 'store.on'],
+    ['before', 'store.before'],
+    ['onAll', 'store.onAll']
+  ],
   docs: [],
   'quick-start': [],
   recipes: [],

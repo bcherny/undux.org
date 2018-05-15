@@ -1,10 +1,10 @@
 es6
 ```js
-// Listen on kittens
+// Register an effect on kittens
 store.on('kittens').subscribe(kittens =>
   console.log('kittens changed to:', kittens)
 )
 
-// Trigger the listener
+// Trigger the effect
 store.set('kittens')(1)
 ```
