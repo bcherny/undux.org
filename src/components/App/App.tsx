@@ -5,7 +5,7 @@ import { Page } from '../Page/Page'
 import { Router } from '../Router/Router'
 import { About } from '../Sections/About'
 import { API } from '../Sections/API'
-import { Docs } from '../Sections/Docs'
+import { Plugins } from '../Sections/Plugins'
 import { QuickStart } from '../Sections/QuickStart'
 import { SplashInstallInfo } from '../SplashInstallInfo/SplashInstallInfo'
 import { SplashNav } from '../SplashNav/SplashNav'
@@ -18,7 +18,7 @@ let routes = {
     <SplashNav />
   </div>,
   api: <Page><API /></Page>,
-  docs: <Page><Docs /></Page>,
+  plugins: <Page><Plugins /></Page>,
   'quick-start': <Page><QuickStart /></Page>,
   recipes: <Page><MainSection /></Page>,
   about: <Page><About /></Page>

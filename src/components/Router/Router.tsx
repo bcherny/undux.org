@@ -7,5 +7,5 @@ type Props = StoreProps & {
 }
 
 export let Router = withStore(({ routes, store }: Props) =>
-  routes[store.get('route')]
+  routes[store.get('route')] || routes['']
 )

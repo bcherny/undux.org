@@ -18,5 +18,6 @@ export function About() {
     <SectionSubheading>Goal #3 is familiar abstractions.</SectionSubheading>
 
     <p>No need to learn about Actions, Reducers, or any of that. Just call get and set, and everything works just as you expect.</p>
+    <SectionHeading text='Undux vs. Redux & Flux' />
   </>
 }

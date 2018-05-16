@@ -3,7 +3,7 @@ import { Route } from './datatypes'
 export const ROUTES: [Route, string][] = [
   ['quick-start', 'Quick Start'],
   ['api', 'API'],
-  ['docs', 'Documentation'],
+  ['plugins', 'Plugins'],
   ['recipes', 'Examples & Recipes'],
   ['about', 'About']
 ]
@@ -19,7 +19,7 @@ export const SUBROUTES: Record<Route, [string, string][]> = {
     ['before', 'store.before'],
     ['onAll', 'store.onAll']
   ],
-  docs: [],
+  plugins: [],
   'quick-start': [],
   recipes: [],
   about: []

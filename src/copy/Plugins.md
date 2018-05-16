@@ -5,7 +5,7 @@ import { State } from './exampleStore'
 
 const withLocalStorage: Plugin<State> = store => {
 
-  // Listen on all events (fires after the model updates)
+  // Listen on all events
   store.onAll().subscribe(({ key, previousValue, value }) =>
     console.log(
       'changed', key,
@@ -14,13 +14,7 @@ const withLocalStorage: Plugin<State> = store => {
     )
   )
 
-  // Listen on all events (fires before the model updates)
-  store.beforeAll().subscribe(({ key, previousValue, value }) =>
-    localStorage.set(key, value)
-  )
-
   return store
-
 }
 ```
 
@@ -31,7 +25,7 @@ import type { State } from './exampleStore'
 
 const withLocalStorage: Plugin<State> = store => {
 
-  // Listen on all events (fires after the model updates)
+  // Listen on all events
   store.onAll().subscribe(({ key, previousValue, value }) =>
     console.log(
       'changed', key,
@@ -40,14 +34,7 @@ const withLocalStorage: Plugin<State> = store => {
     )
   )
 
-  // Listen on all events (fires before the model updates)
-  store.beforeAll().subscribe(({ key, previousValue, value }) =>
-    // Save the new state to localStorage
-    localStorage.set(key, value)
-  )
-
   return store
-
 }
 ```
 
@@ -55,7 +42,7 @@ es6
 ```ts
 function withLocalStorage(store) {
 
-  // Listen on all events (fires after the model updates)
+  // Listen on all events
   store.onAll().subscribe(({ key, previousValue, value }) =>
     console.log(
       'changed', key,
@@ -64,14 +51,7 @@ function withLocalStorage(store) {
     )
   )
 
-  // Listen on all events (fires before the model updates)
-  store.beforeAll().subscribe(({ key, previousValue, value }) =>
-    // Save the new state to localStorage
-    localStorage.set(key, value)
-  )
-
   return store
-
 }
 ```
 
@@ -79,7 +59,7 @@ es5
 ```ts
 function withLocalStorage(store) {
 
-  // Listen on all events (fires after the model updates)
+  // Listen on all events
   store.onAll().subscribe(function(change) {
     console.log(
       'changed', change.key,
@@ -88,13 +68,6 @@ function withLocalStorage(store) {
     )
   })
 
-  // Listen on all events (fires before the model updates)
-  store.beforeAll().subscribe(function(change) {
-    // Save the new state to localStorage
-    localStorage.set(change.key, change.value)
-  })
-
   return store
-
 }
 ```
