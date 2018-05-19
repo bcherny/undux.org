@@ -39,10 +39,10 @@ const MyComponent = withStore(({ store }) =>
 
 es5
 ```js
-var withStore = require('./store').withStore
+var store = require('./store')
 
 // Update the component when the store updates
-var MyComponent = withStore(function(props) {
+var MyComponent = store.withStore(function(props) {
   return <div>
     Hello! Today is {props.store.get('today')}
     <button onClick={

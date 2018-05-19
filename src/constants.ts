@@ -1,6 +1,7 @@
 import { Route } from './datatypes'
 
 export const ROUTES: [Route, string][] = [
+  ['install', 'Install'],
   ['quick-start', 'Quick Start'],
   ['api', 'API'],
   ['plugins', 'Plugins'],
@@ -15,10 +16,9 @@ export const SUBROUTES: Record<Route, [string, string][]> = {
     ['connect', 'connect'],
     ['get', 'store.get'],
     ['set', 'store.set'],
-    ['on', 'store.on'],
-    ['before', 'store.before'],
-    ['onAll', 'store.onAll']
+    ['on', 'store.on']
   ],
+  install: [],
   plugins: [],
   'quick-start': [],
   recipes: [],
