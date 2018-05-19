@@ -24,7 +24,13 @@
   max-width: 850px;
 }
 
+.Page ol,
+.Page ul,
 .Page p {
   color: #6f7986;
   margin: 20px 0;
+}
+
+.Page li {
+  margin: 0 0 10px 40px;
 }

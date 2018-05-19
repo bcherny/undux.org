@@ -4,6 +4,16 @@ import { SectionSubheading } from '../SectionSubheading/SectionSubheading'
 
 export function About() {
   return <>
+    <SectionHeading text='Inspiration' />
+
+    <p>Undux was heavily inspired by one-way data flow frameworks like Redux and Flux. It was borne out of the realizations that:</p>
+
+    <ol>
+      <li>Redux and Flux's designs are often unfamiliar and opaque for engineers that don't specialize in functional programming on the frontend.</li>
+      <li>Redux and Flux depend on significant amounts of boilerplate spread across many files, which makes it hard to understand and debug even simple programs. This architecture is at odds with React's principle of colocating model, view, and controller code for ease of understanding.</li>
+      <li>TypeScript and Flow's modern type systems make a lot of this boilerplate unnecessary.</li>
+    </ol>
+
     <SectionHeading text='Design Philosophy' />
     <SectionSubheading>Goal #1 is total type-safety.</SectionSubheading>
 
