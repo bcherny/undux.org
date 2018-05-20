@@ -1,5 +1,6 @@
 import * as React from 'react'
 import '../Code/Code.css'
+import './SplashInstallInfo.css'
 
 export function SplashInstallInfo() {
   return <span className='Code SplashInstallInfo'>

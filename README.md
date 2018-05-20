@@ -1,3 +1,17 @@
 # undux.org
 
-Coming soon...
+## Hacking on it
+
+```sh
+yarn start
+```
+
+## Deploying
+
+```sh
+yarn deploy
+```
+
+## License
+
+MIT
