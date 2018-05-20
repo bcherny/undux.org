@@ -15,9 +15,11 @@
 }
 
 .SideNav a {
+  color: inherit;
   cursor: pointer;
   display: block;
   padding: 15px 20px;
+  text-decoration: none;
 }
 
 .SideNav a:hover,
@@ -27,6 +29,15 @@
 
 .SideNav a.-Active {
   font-weight: 600;
+}
+
+.SideNav a svg {
+  margin: 0 5px -5px 0;
+}
+
+.SideNav a svg.Right {
+  color: #cad1da;
+  float: right;
 }
 
 .SideNav ul ul a {
