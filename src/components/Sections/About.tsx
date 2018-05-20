@@ -6,15 +6,15 @@ export function About() {
   return <>
 
     <SectionHeading text='Design Philosophy' />
-    <SectionSubheading>Goal #1 is total type-safety.</SectionSubheading>
+    <SectionSubheading href='about/goal-1'>Goal #1 is total type-safety.</SectionSubheading>
 
     <p>Getting, setting, reading, and listening on model updates is 100% type-safe: use a key that isn't defined in your model or set a key to the wrong type, and you'll get a compile-time error. And connected components are just as type-safe.</p>
 
-    <SectionSubheading>Goal #2 is letting you write as little boilerplate as possible.</SectionSubheading>
+    <SectionSubheading href='about/goal-2'>Goal #2 is letting you write as little boilerplate as possible.</SectionSubheading>
 
     <p>Define your model in a single place, and use it anywhere safely. No need to define tedious boilerplate for each field on your model. Container components and action creators are optional - most of the time you don't need them, and can introduce them only where needed as your application grows.</p>
 
-    <SectionSubheading>Goal #3 is familiar abstractions.</SectionSubheading>
+    <SectionSubheading href='about/goal-3'>Goal #3 is familiar abstractions.</SectionSubheading>
 
     <p>No need to learn about Actions, Reducers, or any of that. Just call get and set, and everything works just as you expect.</p>
 

@@ -8,11 +8,11 @@ import { SectionSubheading } from '../SectionSubheading/SectionSubheading'
 
 export function QuickStart() {
   return <>
-    <SectionSubheading>1. Create a store</SectionSubheading>
+    <SectionSubheading href='quick-start/1'>1. Create a store</SectionSubheading>
     <PolyglotCode code={QuickStartStep1} />
     <p>Be sure to define a key for each value in your model, even if the value is initially <InlineCode>undefined</InlineCode>.</p>
 
-    <SectionSubheading>2. Connect your React components</SectionSubheading>
+    <SectionSubheading href='quick-start/2'>2. Connect your React components</SectionSubheading>
     <PolyglotCode code={QuickStartStep2} />
     <FlashyHeading>That's all there is to it.</FlashyHeading>
   </>
