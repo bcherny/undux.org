@@ -1,15 +1,16 @@
 import { connect, createStore, Store } from 'undux'
-import { Language, Route } from './datatypes'
+import { Language, Route } from '../datatypes'
 import { withEffects } from './effects'
+import { withHashSync } from './hashSync'
 
 export type State = {
   language: Language
-  route: Route
+  route: [Route] | [Route, string]
 }
 
 let initialState: State = {
   language: 'JavaScript (ES6)',
-  route: ''
+  route: ['']
 }
 
 let initialStateFromLocalStorage = localStorage.getItem('undux-store')
@@ -21,7 +22,7 @@ if (initialStateFromLocalStorage) {
   }
 }
 
-let store = withEffects(createStore(initialState))
+let store = withHashSync(withEffects(createStore(initialState)))
 
 export let withStore = connect(store)
 

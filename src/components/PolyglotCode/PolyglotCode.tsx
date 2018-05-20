@@ -1,7 +1,7 @@
 import 'highlight.js/styles/github.css'
 import * as React from 'react'
 import { Language } from '../../datatypes'
-import { StoreProps, withStore } from '../../store'
+import { StoreProps, withStore } from '../../services/store'
 import './PolyglotCode.css'
 
 type Props = StoreProps & {

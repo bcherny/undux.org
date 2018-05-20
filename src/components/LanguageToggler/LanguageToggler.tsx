@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Language } from '../../datatypes'
-import { withStore } from '../../store'
+import { withStore } from '../../services/store'
 import { Tabs } from '../Tabs/Tabs'
 
 let languages: Language[] = [
