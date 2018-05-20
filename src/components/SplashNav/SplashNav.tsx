@@ -6,9 +6,9 @@ import './SplashNav.css'
 export let SplashNav = withStore(({ store }) =>
   <nav className='SplashNav'>
     <ul>
-    <li><a onClick={() => store.set('route')(['quick-start'])}><Zap className='Icon' size={36} />Quick Start</a></li>
-      <li><a onClick={() => store.set('route')(['plugins'])}><Hash className='Icon' size={36} />Plugins</a></li>
-      <li><a onClick={() => store.set('route')(['recipes'])}><Sun className='Icon' size={36} />Examples & Usage</a></li>
+      <li><a href='#quick-start'><Zap className='Icon' size={36} />Quick Start</a></li>
+      <li><a href='#api'><Hash className='Icon' size={36} />API</a></li>
+      <li><a href='#recipes'><Sun className='Icon' size={36} />Examples & Usage</a></li>
     </ul>
   </nav>
 )
