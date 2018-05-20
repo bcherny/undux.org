@@ -13,7 +13,7 @@ export let SideNav = withStore(({store}) =>
       {ROUTES.map(([route, text, subroutes]) =>
         <li key={route}>
           <a
-            className={!store.get('route')[1] && route === store.get('route')[0] ? '-Active' : ''}
+            className={route === store.get('route')[0] && (!store.get('route')[1] || !subroutes.length) ? '-Active' : ''}
             onClick={() => store.set('route')([route])}
           >{text}</a>
           <ul>

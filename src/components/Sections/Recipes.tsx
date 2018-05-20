@@ -2,6 +2,6 @@ import * as React from 'react'
 
 export function Recipes() {
   return <>
-    TODO
+    <p>Coming soon...</p>
   </>
 }
