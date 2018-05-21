@@ -2,18 +2,26 @@ import 'highlight.js/styles/github.css'
 import * as React from 'react'
 import { Language } from '../../datatypes'
 import { StoreProps, withStore } from '../../services/store'
-import './PolyglotCode.css'
 
 type Props = StoreProps & {
   code: string
+  filename?: string
 }
 
-export let PolyglotCode = withStore<Props>(({ code, store }) => {
+let extensions: Record<Language, string> = {
+  Flow: 'js',
+  'JavaScript (ES6)': 'js',
+  'JavaScript (ES5)': 'js',
+  TypeScript: 'ts'
+}
+
+export let PolyglotCode = withStore<Props>(({ code, filename, store }) => {
   let blocks = parse(code)
   let language = store.get('language')
 
   if (language in blocks) {
     return <div className='Code'>
+      {filename && <span className='Filename'>{filename}.{extensions[language]}</span>}
       <span className='CodeBlock' dangerouslySetInnerHTML={{ __html: blocks[language]!.innerHTML! }} />
     </div>
   }

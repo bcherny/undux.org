@@ -9,10 +9,10 @@ export function Install() {
   return <>
     <p>Undux is compatible with RxJS versions 4 and up. If you're not sure which version to use, use 6 (the latest version).</p>
     <SectionSubheading href='install/rx6'>Using RxJS 6 (recommended)</SectionSubheading>
-    <PolyglotCode code={InstallRxJS6} />
+    <PolyglotCode code={InstallRxJS6} filename='' />
     <SectionSubheading href='install/rx5'>Using RxJS 5 (legacy)</SectionSubheading>
-    <PolyglotCode code={InstallRxJS5} />
+    <PolyglotCode code={InstallRxJS5} filename='' />
     <SectionSubheading href='install/rx4'>Using RxJS 4 (legacy)</SectionSubheading>
-    <PolyglotCode code={InstallRxJS4} />
+    <PolyglotCode code={InstallRxJS4} filename='' />
   </>
 }

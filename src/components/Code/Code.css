@@ -1,16 +1,15 @@
 .Code {
   background: #f9f9f9;
   padding: 40px;
+  position: relative;
 }
 
-.Code .LanguageToggler {
-  margin: -40px -40px 40px;
+.Code .Filename {
+  color: #8f949c;
   padding: 10px 20px;
-  text-align: right;
-}
-
-.Code .LanguageToggler ~ .CodeBlock {
-  margin-top: -40px;
+  position: absolute;
+    right: 0;
+    top: 0;
 }
 
 .Code .CodeBlock code,

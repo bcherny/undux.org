@@ -1,61 +1,51 @@
 ts
 ```ts
-// MyComponent.js
+import { StorePlugin } from './MyStore'
 
-import { withStore } from './store'
-
-// Update the component when the store updates
-const MyComponent = withStore(({ store }) =>
-  <div>
-    Hello! Today is {store.get('today')}
-    <button onClick={() => store.set('today')(new Date)}>Update Date</button>
-  </div>
-)
+export let withEffects: StorePlugin = store => {
+  store
+    .on('today')
+    .subscribe(today =>
+      console.log('today changed to', store)
+    )
+  return store
+}
 ```
 
 flow
-```jsx
-// MyComponent.js
+```ts
+import type { StorePlugin } from './MyStore'
 
-import { StoreProps, withStore } from './store'
-
-// Update the component when the store updates
-const MyComponent = withStore(({ store }: StoreProps) =>
-  <div>
-    Hello! Today is {store.get('today')}
-    <button onClick={() => store.set('today')(new Date)}>Update Date</button>
-  </div>
-)
+export let withEffects: StorePlugin = store => {
+  store
+    .on('today')
+    .subscribe(today =>
+      console.log('today changed to', store)
+    )
+  return store
+}
 ```
 
 es6
-```jsx
-// MyComponent.js
-
-import { withStore } from './store'
-
-// Update the component when the store updates
-const MyComponent = withStore(({ store }) =>
-  <div>
-    Hello! Today is {store.get('today')}
-    <button onClick={() => store.set('today')(new Date)}>Update Date</button>
-  </div>
-)
+```js
+export function withEffects(store) {
+  store
+    .on('today')
+    .subscribe(today =>
+      console.log('today changed to', store)
+    )
+  return store
+}
 ```
 
 es5
-```jsx
-// MyComponent.js
-
-var store = require('./store')
-
-// Update the component when the store updates
-var MyComponent = store.withStore(function(props) {
-  return <div>
-    Hello! Today is {props.store.get('today')}
-    <button onClick={
-      function() { props.store.set('today')(new Date) }
-    }>Update Date</button>
-  </div>
-})
+```js
+module.exports.withEffects = function(store) {
+  store
+    .on('today')
+    .subscribe(function(today) {
+      console.log('today changed to', store)
+    })
+  return store
+}
 ```

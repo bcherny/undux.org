@@ -10,18 +10,23 @@
   z-index: 1;
 }
 
-.Page .PageTitle h2 {
-}
-
-.Page .LanguageToggler {
-}
-
 .Page .MainSection {
   top: 110px;
 }
 
 .Page .MainSection > * {
   max-width: 850px;
+}
+
+.Page blockquote {
+  background: #f3f8ff;
+  color: #1e4475;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 48px;
+  margin: 40px 0;
+  padding: 40px;
+  text-align: center;
 }
 
 .Page ol,
