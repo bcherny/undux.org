@@ -1,0 +1,41 @@
+.SplashPage {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+}
+
+.SplashPage .Header {
+  flex: 4;
+}
+
+.SplashPage .SplashInstallInfo {
+  background: #e4e8ec;
+  flex-grow: 0;
+  font-size: 2em;
+}
+
+.SplashPage .SplashNav {
+  flex: 1;
+  font-family: 'Fira Code', Menlo, 'DejaVu Sans Mono', Monaco, 'Courier New', Courier, monospace;
+  padding: 50px;
+}
+
+.SplashPage .About {
+  text-align: center;
+  flex: 2;
+  max-width: 600px;
+}
+
+.SplashPage .About h3 {
+  color: #1e4475;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 48px;
+}

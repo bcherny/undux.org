@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { Header } from '../Header/Header'
 import { Page } from '../Page/Page'
 import { Router } from '../Router/Router'
 import { About } from '../Sections/About'
@@ -10,16 +9,11 @@ import { QuickStart } from '../Sections/QuickStart'
 import { Recipes } from '../Sections/Recipes'
 import { Scaling } from '../Sections/Scaling'
 import { Testing } from '../Sections/Testing'
-import { SplashInstallInfo } from '../SplashInstallInfo/SplashInstallInfo'
-import { SplashNav } from '../SplashNav/SplashNav'
+import { SplashPage } from '../SplashPage/SplashPage'
 import './App.css'
 
 let routes = {
-  '': <div className='SplashPage'>
-    <Header />
-    <SplashInstallInfo />
-    <SplashNav />
-  </div>,
+  '': <SplashPage />,
   api: <Page><API /></Page>,
   install: <Page><Install /></Page>,
   plugins: <Page><Plugins /></Page>,

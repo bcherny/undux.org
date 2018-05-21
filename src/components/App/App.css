@@ -27,31 +27,3 @@ body,
   font: 18px/30px Roboto, Helvetica, Arial, sans-serif;
   /* font: 13px/21px 'Fira Code', Menlo, 'DejaVu Sans Mono', Monaco, 'Courier New', Courier, monospace; */
 }
-
-.SplashPage {
-  align-items: center;
-  display: flex;
-  font-family: 'Fira Code', Menlo, 'DejaVu Sans Mono', Monaco, 'Courier New', Courier, monospace;
-  flex-direction: column;
-  justify-content: center;
-  position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-}
-
-.SplashPage .Header {
-  flex: 4;
-}
-
-.SplashPage .SplashInstallInfo {
-  background: #e4e8ec;
-  flex-grow: 0;
-  font-size: 2em;
-}
-
-.SplashPage .SplashNav {
-  flex: 1;
-  padding: 50px;
-}

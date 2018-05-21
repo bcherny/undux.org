@@ -11,12 +11,12 @@ export function QuickStart() {
   return <>
     <blockquote>Welcome to Undux! Follow this guide to get up and running in a few minutes or less.</blockquote>
     <SectionSubheading href='quick-start/1'>1. Create a store</SectionSubheading>
-    <p>Let's start by creating a store. Think of a store as an Object, or a Map from keys to values. Each key maps to exactly one value, and you can put as many keys as you want in your store. For this example, we'll create a store with two keys: <InlineCode>today</InlineCode> and <InlineCode>users</InlineCode>. We list all the keys that a store might have upfront (you can't add keys after the store is created), and assign them some initial value.</p>
+    <p>Let's start by creating a store. Think of a store as an Object, or a Map from keys to values. Each key maps to exactly one value, and you can put as many keys as you want in your store. For this example, we'll create a store with two keys: <InlineCode>today</InlineCode> and <InlineCode>users</InlineCode>.</p>
+    <p>We list all the keys that a store might have upfront, and assign them some initial values. You'll update your store's values over time, but you can't add keys after the store is created, so be sure to define a key for each value in your store, even if the value is initially <InlineCode>undefined</InlineCode>.</p>
     <PolyglotCode code={QuickStartStep1} filename='store' />
-    <p>Be sure to define a key for each value in your store, even if the value is initially <InlineCode>undefined</InlineCode>.</p>
 
     <SectionSubheading href='quick-start/3'>2. Optional: Add effects</SectionSubheading>
-    <p>When your store updates, Undux will automatically re-render any components that use that store. If you want to do something more complex when a field on the store updates — things like sending AJAX requests, logging, or updating another field on the store — use effects.</p>
+    <p>When your store updates, Undux will automatically re-render any React components that use that store. If you want to do something more complex when a field on the store updates — things like sending AJAX requests, logging, or updating another field on the store — use effects.</p>
     <PolyglotCode code={QuickStartStep2} filename='effects' />
 
     <SectionSubheading href='quick-start/2'>3. Connect your React components</SectionSubheading>
