@@ -8,7 +8,7 @@ export function SplashPage() {
   return <div className='SplashPage'>
     <Header />
     <div className='About'>
-      <h3>Undux is a simple, typesafe alternative to <a href='https://facebook.github.io/flux/'>Flux</a> and <a href='https://redux.js.org/'>Redux</a>. Use it to manage state and data for ReactJS applications of all sizes.</h3>
+      <h3>Undux is a simple & typesafe alternative to <a href='https://facebook.github.io/flux/'>Flux</a> and <a href='https://redux.js.org/'>Redux</a>. Use it to manage state and data for ReactJS applications of all sizes.</h3>
     </div>
     <SplashInstallInfo />
     <SplashNav />
