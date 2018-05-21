@@ -1,3 +1,4 @@
 export type Language = 'TypeScript' | 'Flow' | 'JavaScript (ES6)' | 'JavaScript (ES5)'
 
-export type Route = '' | 'about' | 'api' | 'install' | 'quick-start' | 'plugins' | 'recipes'
+export type Route = '' | 'about' | 'api' | 'install' | 'plugins'
+                  | 'quick-start' | 'recipes' | 'scaling' | 'testing'

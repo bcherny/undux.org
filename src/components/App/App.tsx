@@ -8,6 +8,8 @@ import { Install } from '../Sections/Install'
 import { Plugins } from '../Sections/Plugins'
 import { QuickStart } from '../Sections/QuickStart'
 import { Recipes } from '../Sections/Recipes'
+import { Scaling } from '../Sections/Scaling'
+import { Testing } from '../Sections/Testing'
 import { SplashInstallInfo } from '../SplashInstallInfo/SplashInstallInfo'
 import { SplashNav } from '../SplashNav/SplashNav'
 import './App.css'
@@ -23,6 +25,8 @@ let routes = {
   plugins: <Page><Plugins /></Page>,
   'quick-start': <Page><QuickStart /></Page>,
   recipes: <Page><Recipes /></Page>,
+  scaling: <Page><Scaling /></Page>,
+  testing: <Page><Testing /></Page>,
   about: <Page><About /></Page>
 }
 

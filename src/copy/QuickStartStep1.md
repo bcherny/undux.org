@@ -1,6 +1,8 @@
 ts
 ```ts
-import { connect, createStore } from 'undux'
+// myStore.ts
+
+import { connect, createStore, Store } from 'undux'
 
 // Declare your store's types.
 type State = {
@@ -14,11 +16,19 @@ const store = createStore<State>({
   users: []
 })
 
+// Export a connector function for React.
 export const withStore = connect(store)
+
+// Export prop types for React.
+export type StoreProps = {
+  store: Store<State>
+}
 ```
 
 flow
 ```ts
+// myStore.js
+
 import { connect, createStore } from 'undux'
 
 // Declare your store's types.
@@ -35,11 +45,19 @@ const initialState: State = {
 // Create a store with an initial value.
 const store = createStore(initialState)
 
+// Export a connector function for React.
 export const withStore = connect(store)
+
+// Export prop types for React.
+export type StoreProps = {|
+  store: typeof Store
+|}
 ```
 
 es6
-```ts
+```js
+// myStore.js
+
 import { connect, createStore } from 'undux'
 
 // Create a store with an initial value.
@@ -52,7 +70,9 @@ export const withStore = connect(store)
 ```
 
 es5
-```ts
+```js
+// myStore.js
+
 var undux = require('undux')
 
 // Create a store with an initial value.

@@ -1,5 +1,7 @@
 ts
 ```ts
+// MyComponent.js
+
 import { withStore } from './store'
 
 // Update the component when the store updates
@@ -12,11 +14,13 @@ const MyComponent = withStore(({ store }) =>
 ```
 
 flow
-```js
-import { withStore } from './store'
+```jsx
+// MyComponent.js
+
+import { StoreProps, withStore } from './store'
 
 // Update the component when the store updates
-const MyComponent = withStore(({ store }) =>
+const MyComponent = withStore(({ store }: StoreProps) =>
   <div>
     Hello! Today is {store.get('today')}
     <button onClick={() => store.set('today')(new Date)}>Update Date</button>
@@ -25,7 +29,9 @@ const MyComponent = withStore(({ store }) =>
 ```
 
 es6
-```js
+```jsx
+// MyComponent.js
+
 import { withStore } from './store'
 
 // Update the component when the store updates
@@ -38,7 +44,9 @@ const MyComponent = withStore(({ store }) =>
 ```
 
 es5
-```js
+```jsx
+// MyComponent.js
+
 var store = require('./store')
 
 // Update the component when the store updates
