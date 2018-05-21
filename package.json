@@ -2,7 +2,7 @@
   "name": "undux.org",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://bcherny.github.io/undux.org",
+  "homepage": ".",
   "dependencies": {
     "feather-icons": "^4.7.0",
     "highlight.js": "^9.12.0",
