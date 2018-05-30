@@ -8,10 +8,5 @@ export let withEffects: Plugin<State> = store => {
     localStorage.setItem('undux-store', JSON.stringify({ language }))
   )
 
-  // Save route to URL hash
-  store.on('route').subscribe(_ =>
-    window.location.hash = _.join('/')
-  )
-
   return store
 }

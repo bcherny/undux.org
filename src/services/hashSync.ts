@@ -8,12 +8,17 @@ type ParsedHash = [undefined, undefined] | [Route, undefined] | [Route, string]
 
 export let withHashSync: Plugin<State> = store => {
 
-  // subsequent syncs
+  // Route -> URL hash
+  store.on('route').subscribe(_ =>
+    window.location.hash = _.join('/')
+  )
+
+  // URL hash -> Route
   observeHash().subscribe(_ =>
     syncHashToStore(store, _)
   )
 
-  // initial sync
+  // URL hash -> Route (initial sync)
   syncHashToStore(store, parseHash(window.location.hash))
 
   return store
