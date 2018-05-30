@@ -14,7 +14,7 @@ export const ROUTES: RouteWithSubroutes[] = [
   ]],
   ['plugins', 'Plugins', []],
   ['recipes', 'Examples & Recipes', []],
-  ['scaling', 'Scaling', []],
-  ['testing', 'Testing', []],
+  // ['scaling', 'Scaling', []],
+  // ['testing', 'Testing', []],
   ['about', 'About', []]
 ]
