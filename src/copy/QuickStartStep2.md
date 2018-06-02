@@ -4,9 +4,9 @@ import { StorePlugin } from './MyStore'
 
 export let withEffects: StorePlugin = store => {
   store
-    .on('today')
-    .subscribe(today =>
-      console.log('today changed to', store)
+    .on('buttonText')
+    .subscribe(buttonText =>
+      console.log('The user updated buttonText to', buttonText)
     )
   return store
 }
@@ -18,9 +18,9 @@ import type { StorePlugin } from './MyStore'
 
 export let withEffects: StorePlugin = store => {
   store
-    .on('today')
-    .subscribe(today =>
-      console.log('today changed to', store)
+    .on('buttonText')
+    .subscribe(buttonText =>
+      console.log('The user updated buttonText to', buttonText)
     )
   return store
 }
@@ -30,9 +30,9 @@ es6
 ```js
 export function withEffects(store) {
   store
-    .on('today')
-    .subscribe(today =>
-      console.log('today changed to', store)
+    .on('buttonText')
+    .subscribe(buttonText =>
+      console.log('The user updated buttonText to', buttonText)
     )
   return store
 }
@@ -42,9 +42,9 @@ es5
 ```js
 module.exports.withEffects = function(store) {
   store
-    .on('today')
-    .subscribe(function(today) {
-      console.log('today changed to', store)
+    .on('buttonText')
+    .subscribe(function (buttonText) {
+      console.log('The user updated buttonText to', buttonText)
     })
   return store
 }

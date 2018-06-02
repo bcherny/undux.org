@@ -5,14 +5,14 @@ import { withEffects } from './effects'
 
 // Declare your store's types.
 type State = {
-  today: Date
-  users: string[]
+  buttonText: string
+  clickCount: number
 }
 
 // Create a store with an initial value.
 const store = withEffects(createStore<State>({
-  today: new Date,
-  users: []
+  buttonText: 'Click Me',
+  clickCount: 0
 }))
 
 // Export a connector function for React.
@@ -34,13 +34,13 @@ import { withEffects } from './effects'
 
 // Declare your store's types.
 type Store = {|
-  today: Date,
-  users: Array<string>
+  buttonText: string,
+  clickCount: number
 |}
 
 const initialState: State = {
-  today: new Date,
-  users: []
+  buttonText: 'Click Me',
+  clickCount: 0
 }
 
 // Create a store with an initial value.
@@ -65,8 +65,8 @@ import { withEffects } from './effects'
 
 // Create a store with an initial value.
 const store = withEffects(createStore({
-  today: new Date,
-  users: []
+  buttonText: 'Click Me',
+  clickCount: 0
 }))
 
 export const withStore = connect(store)
@@ -79,8 +79,8 @@ var effects = require('./effects')
 
 // Create a store with an initial value.
 var store = effects.withEffects(undux.createStore({
-  today: new Date,
-  users: []
+  buttonText: 'Click Me',
+  clickCount: 0
 }))
 
 module.exports.withStore = undux.connect(store)

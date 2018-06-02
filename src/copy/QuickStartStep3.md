@@ -1,12 +1,14 @@
 ts
-```ts
+```tsx
 import { withStore } from './MyStore'
 
 // Update the component when the store updates
 const MyComponent = withStore(({ store }) =>
   <div>
-    Hello! Today is {store.get('today')}
-    <button onClick={() => store.set('today')(new Date)}>Update Date</button>
+    You've clicked the button {store.get('clickCount')} times.
+    <button onClick={() =>
+      store.set('clickCount')(store.get('clickCount') + 1)
+    }>{store.get('buttonText')}</button>
   </div>
 )
 ```
@@ -18,8 +20,10 @@ import { StoreProps, withStore } from './MyStore'
 // Update the component when the store updates
 const MyComponent = withStore(({ store }: StoreProps) =>
   <div>
-    Hello! Today is {store.get('today')}
-    <button onClick={() => store.set('today')(new Date)}>Update Date</button>
+    You've clicked the button {store.get('clickCount')} times.
+    <button onClick={() =>
+      store.set('clickCount')(store.get('clickCount') + 1)
+    }>{store.get('buttonText')}</button>
   </div>
 )
 ```
@@ -31,8 +35,10 @@ import { withStore } from './MyStore'
 // Update the component when the store updates
 const MyComponent = withStore(({ store }) =>
   <div>
-    Hello! Today is {store.get('today')}
-    <button onClick={() => store.set('today')(new Date)}>Update Date</button>
+    You've clicked the button {store.get('clickCount')} times.
+    <button onClick={() =>
+      store.set('clickCount')(store.get('clickCount') + 1)
+    }>{store.get('buttonText')}</button>
   </div>
 )
 ```
@@ -44,10 +50,10 @@ var store = require('./MyStore')
 // Update the component when the store updates
 var MyComponent = store.withStore(function(props) {
   return <div>
-    Hello! Today is {props.store.get('today')}
-    <button onClick={
-      function() { props.store.set('today')(new Date) }
-    }>Update Date</button>
+    You've clicked the button {store.get('clickCount')} times.
+    <button onClick={function() {
+      store.set('clickCount')(store.get('clickCount') + 1)
+    }}>{store.get('buttonText')}</button>
   </div>
 })
 ```

@@ -11,7 +11,7 @@ export function QuickStart() {
   return <>
     <blockquote>Welcome to Undux! Follow this guide to get up and running in a few minutes or less.</blockquote>
     <SectionSubheading href='quick-start/1'>1. Create a store</SectionSubheading>
-    <p>Let's start by creating a store. Think of a store as an Object, or a Map from keys to values. Each key maps to exactly one value, and you can put as many keys as you want in your store. For this example, we'll create a store with two keys: <InlineCode>today</InlineCode> and <InlineCode>users</InlineCode>.</p>
+    <p>Let's start by creating a store. Think of a store as an Object, or a Map from keys to values. Each key maps to exactly one value, and you can put as many keys as you want in your store. For this example, we'll create a store with two keys: <InlineCode>buttonText</InlineCode> and <InlineCode>clickCount</InlineCode>.</p>
     <p>We list all the keys that a store might have upfront, and assign them some initial values. You'll update your store's values over time, but you can't add keys after the store is created, so be sure to define a key for each value in your store, even if the value is initially <InlineCode>undefined</InlineCode>.</p>
     <PolyglotCode code={QuickStartStep1} filename='store' />
 
@@ -26,6 +26,7 @@ export function QuickStart() {
       <li>Pass your store to your component as a prop, so it's available as <InlineCode>props.store</InlineCode>.</li>
     </ul>
     <PolyglotCode code={QuickStartStep3} filename='MyComponent' />
+    <p><a href='https://stackblitz.com/edit/js-gwo2c3?file=MyStore.js' target='_blank'>Run this code in the playground.</a></p>
     <FlashyHeading>That's all there is to it.</FlashyHeading>
   </>
 }
