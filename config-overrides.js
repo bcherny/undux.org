@@ -22,12 +22,9 @@ module.exports = (config, env) => {
           options: {
             highlight(str, lang) {
               if (lang && highlight.getLanguage(lang)) {
-                try {
-                  return highlight.highlight(lang, str).value
-                } catch (__) {}
+                return highlight.highlight(lang, str).value
               }
-
-              return str
+              return highlight.highlight('js', str).value
             },
             smartypants: true,
           }
