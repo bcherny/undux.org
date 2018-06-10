@@ -1,11 +1,13 @@
 import 'highlight.js/styles/github.css'
 import * as React from 'react'
+import { ExternalLink } from 'react-feather'
 import { Language } from '../../datatypes'
 import { StoreProps, withStore } from '../../services/store'
 
 type Props = StoreProps & {
   code: string
   filename?: string
+  playgroundLinks?: Partial<Record<Language, string>>
 }
 
 let extensions: Record<Language, string> = {
@@ -15,13 +17,17 @@ let extensions: Record<Language, string> = {
   TypeScript: 'ts'
 }
 
-export let PolyglotCode = withStore<Props>(({ code, filename, store }) => {
+export let PolyglotCode = withStore<Props>(({ code, filename, playgroundLinks, store }) => {
   let blocks = parse(code)
   let language = store.get('language')
 
   if (language in blocks) {
+    let file = filename ? `${filename}.${extensions[language]}` : ''
+    let playgroundLink = playgroundLinks && playgroundLinks[language]
+      ? <a href={playgroundLinks[language]} target='_blank'>playground <ExternalLink /></a>
+      : ''
     return <div className='Code'>
-      {filename && <span className='Filename'>{filename}.{extensions[language]}</span>}
+      {filename && <span className='Filename'>{file}{playgroundLink}</span>}
       <span className='CodeBlock' dangerouslySetInnerHTML={{ __html: blocks[language]!.innerHTML! }} />
     </div>
   }

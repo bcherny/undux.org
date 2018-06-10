@@ -12,6 +12,24 @@
     top: 0;
 }
 
+.Code .Filename a {
+  background: #998;
+  border-radius: 4px;
+  color: #fdfdf6;
+  margin: -3px -2px -3px 7px;
+  padding: 3px 2px 3px 6px;
+  text-decoration: none;
+}
+
+.Code .Filename a:hover {
+  background: #888879;
+}
+
+.Code .Filename svg {
+  height: 20px;
+  margin-bottom: -2px;
+}
+
 .Code .CodeBlock code,
 .Code .CodeBlock input {
   background: transparent;

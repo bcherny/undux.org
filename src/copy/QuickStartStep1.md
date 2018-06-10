@@ -1,7 +1,7 @@
 ts
 ```ts
 import { connect, createStore, Plugin } from 'undux'
-import { withEffects } from './effects'
+import { withEffects } from './MyEffects'
 
 // Declare your store's types.
 type State = {
@@ -33,7 +33,7 @@ export type StorePlugin = Plugin<State>
 flow
 ```ts
 import { connect, createStore, Plugin } from 'undux'
-import { withEffects } from './effects'
+import { withEffects } from './MyEffects'
 
 // Declare your store's types.
 type State = {|
@@ -65,27 +65,37 @@ export type StorePlugin = Plugin<State>
 es6
 ```js
 import { connect, createStore } from 'undux'
-import { withEffects } from './effects'
+import { withEffects } from './MyEffects'
 
-// Create a store with an initial value.
-const store = withEffects(createStore({
+// Declare your store's initial state.
+const initialState = {
   buttonText: 'Click Me',
   clickCount: 0
-}))
+}
 
+// Create a store with an initial value.
+const store = withEffects(createStore(initialState))
+
+// Export a connector function for React.
 export const withStore = connect(store)
 ```
 
 es5
 ```js
 var undux = require('undux')
-var effects = require('./effects')
+var effects = require('./MyEffects')
 
-// Create a store with an initial value.
-var store = effects.withEffects(undux.createStore({
+// Declare your store's initial state.
+var initialState = {
   buttonText: 'Click Me',
   clickCount: 0
-}))
+}
 
+// Create a store with an initial value.
+var store = effects.withEffects(
+  undux.createStore(initialState)
+)
+
+// Export a connector function for React.
 module.exports.withStore = undux.connect(store)
 ```

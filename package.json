@@ -4,14 +4,14 @@
   "private": true,
   "homepage": ".",
   "dependencies": {
-    "feather-icons": "^4.7.0",
+    "feather-icons": "^4.7.3",
     "highlight.js": "^9.12.0",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
     "react-feather": "^1.1.0",
-    "react-scripts-ts": "2.15.1",
-    "rxjs": "^6.1.0",
-    "undux": "^4.4.0"
+    "react-scripts-ts": "2.16.0",
+    "rxjs": "^6.2.0",
+    "undux": "^4.6.2"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -23,19 +23,19 @@
   },
   "devDependencies": {
     "@css-blocks/webpack": "^0.19.0",
-    "@mdx-js/loader": "^0.8.1",
+    "@mdx-js/loader": "^0.10.0",
     "@types/feather-icons": "^4.7.0",
-    "@types/jest": "^22.2.3",
-    "@types/node": "^10.0.4",
-    "@types/react": "^16.3.14",
-    "@types/react-dom": "^16.0.5",
-    "gh-pages": "^1.1.0",
+    "@types/jest": "^23.0.0",
+    "@types/node": "10.0.4",
+    "@types/react": "^16.3.17",
+    "@types/react-dom": "^16.0.6",
+    "gh-pages": "^1.2.0",
     "html-loader": "^0.5.5",
-    "markdown-loader": "^2.0.2",
+    "markdown-loader": "^3.0.0",
     "react-app-rewire-typescript": "^2.0.2",
     "react-app-rewired": "^1.5.2",
     "react-scripts": "^1.1.4",
     "remark-highlight.js": "^5.0.0",
-    "typescript": "^2.8.3"
+    "typescript": "^2.9.1"
   }
 }
