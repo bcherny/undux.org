@@ -3,10 +3,10 @@ import { Page } from '../Page/Page'
 import { Router } from '../Router/Router'
 import { About } from '../Sections/About'
 import { API } from '../Sections/API'
+import { Examples } from '../Sections/Examples'
 import { Install } from '../Sections/Install'
 import { Plugins } from '../Sections/Plugins'
 import { QuickStart } from '../Sections/QuickStart'
-import { Recipes } from '../Sections/Recipes'
 import { Scaling } from '../Sections/Scaling'
 import { Testing } from '../Sections/Testing'
 import { SplashPage } from '../SplashPage/SplashPage'
@@ -18,7 +18,7 @@ let routes = {
   install: <Page><Install /></Page>,
   plugins: <Page><Plugins /></Page>,
   'quick-start': <Page><QuickStart /></Page>,
-  recipes: <Page><Recipes /></Page>,
+  examples: <Page><Examples /></Page>,
   scaling: <Page><Scaling /></Page>,
   testing: <Page><Testing /></Page>,
   about: <Page><About /></Page>

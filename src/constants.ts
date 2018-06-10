@@ -13,7 +13,7 @@ export const ROUTES: RouteWithSubroutes[] = [
     ['on', 'store.on']
   ]],
   ['plugins', 'Plugins', []],
-  ['recipes', 'Examples & Recipes', []],
+  ['examples', 'Examples & Usage', []],
   // ['scaling', 'Scaling', []],
   // ['testing', 'Testing', []],
   ['about', 'About', []]
