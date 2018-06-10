@@ -7,7 +7,7 @@ import { SectionSubheading } from '../SectionSubheading/SectionSubheading'
 
 export function Recipes() {
   return <>
-    <SectionSubheading href='recipes/store'>Creating a store</SectionSubheading>
+    <SectionSubheading href='recipes/basic-store'>Basic store</SectionSubheading>
     <PolyglotCode code={RecipeStore} filename='' />
     <SectionSubheading href='recipes/stateless-component-with-props'>Stateless React component with extra props</SectionSubheading>
     <PolyglotCode code={RecipeStatelessComponentWithProps} filename='' />
