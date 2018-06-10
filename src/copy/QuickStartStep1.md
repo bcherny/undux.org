@@ -1,6 +1,6 @@
 ts
 ```ts
-import { connect, createStore, Plugin, Store } from 'undux'
+import { connect, createStore, Plugin } from 'undux'
 import { withEffects } from './effects'
 
 // Declare your store's types.
@@ -9,18 +9,21 @@ type State = {
   clickCount: number
 }
 
-// Create a store with an initial value.
-const store = withEffects(createStore<State>({
+// Declare your store's initial state.
+const initialState: State = {
   buttonText: 'Click Me',
   clickCount: 0
-}))
+}
+
+// Create a store with an initial value.
+const store = withEffects(createStore(initialState))
 
 // Export a connector function for React.
 export const withStore = connect(store)
 
 // Export prop types for React.
 export type StoreProps = {
-  store: Store<State>
+  store: typeof store
 }
 
 // Export a concrete Plugin type for effects.
@@ -29,15 +32,16 @@ export type StorePlugin = Plugin<State>
 
 flow
 ```ts
-import { connect, createStore, Plugin, Store } from 'undux'
+import { connect, createStore, Plugin } from 'undux'
 import { withEffects } from './effects'
 
 // Declare your store's types.
-type Store = {|
+type State = {|
   buttonText: string,
   clickCount: number
 |}
 
+// Declare your store's initial state.
 const initialState: State = {
   buttonText: 'Click Me',
   clickCount: 0
@@ -51,7 +55,7 @@ export const withStore = connect(store)
 
 // Export prop types for React.
 export type StoreProps = {|
-  store: Store<State>
+  store: typeof store
 |}
 
 // Export a concrete Plugin type for effects.
