@@ -1,60 +1,3 @@
-.Code {
-  background: #f9f9f9;
-  padding: 40px;
-  position: relative;
-}
-
-.Code .Filename {
-  color: #8f949c;
-  padding: 10px 20px;
-  position: absolute;
-    right: 0;
-    top: 0;
-}
-
-.Code .Filename a {
-  background: #998;
-  border-radius: 4px;
-  color: #fdfdf6;
-  margin: -3px -2px -3px 7px;
-  padding: 3px 2px 3px 6px;
-  text-decoration: none;
-}
-
-.Code .Filename a:hover {
-  background: #888879;
-}
-
-.Code .Filename svg {
-  height: 20px;
-  margin-bottom: -2px;
-}
-
-.Code .CodeBlock code,
-.Code .CodeBlock input {
-  background: transparent;
-  font: 18px/26px 'Fira Code', Menlo, 'DejaVu Sans Mono', Monaco, 'Courier New', Courier, monospace;
-  white-space: pre;
-  -webkit-appearance: none;
-}
-
-.Code .Missing {
-  color: #b0b7c1;
-  font-size: 48px;
-  line-height: 64px;
-  text-align: center;
-}
-
-.Code .MissingSub a {
-  color: #d5dbe4;
-  display: block;
-  font-size: 24px;
-  font-weight: 200;
-  line-height: 64px;
-  text-align: center;
-  text-decoration: none;
-}
-
 /**
 * GHColors theme by Avi Aryan (http://aviaryan.in)
 * Inspired by Github syntax coloring
@@ -108,7 +51,10 @@ pre[class*="language-"] {
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
+  padding: .2em;
+  padding-top: 1px; padding-bottom: 1px;
   background: #f8f8f8;
+  border: 1px solid #dddddd;
 }
 
 .token.comment,
@@ -145,15 +91,13 @@ pre[class*="language-"] {
 }
 
 .token.atrule,
+.token.keyword,
 .token.attr-name,
 .language-autohotkey .token.selector {
   color: #00a4db;
 }
 
-.token.keyword {
-  font-weight: 700;
-}
-
+.token.function,
 .token.deleted,
 .language-autohotkey .token.tag {
   color: #9a050f;

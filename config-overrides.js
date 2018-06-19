@@ -1,7 +1,7 @@
 const { getBabelLoader } = require('react-app-rewired')
 const rewireTypescript = require('react-app-rewire-typescript')
 const remarkHighlight = require('remark-highlight.js')
-const highlight = require('highlight.js')
+const Prism = require('./prism')
 
 module.exports = (config, env) => {
   const babelLoader = getBabelLoader(config.module.rules)
@@ -20,11 +20,11 @@ module.exports = (config, env) => {
         {
           loader: "markdown-loader",
           options: {
-            highlight(str, lang) {
-              if (lang && highlight.getLanguage(lang)) {
-                return highlight.highlight(lang, str).value
+            highlight(code, lang) {
+              if (!lang) {
+                lang = 'jsx'
               }
-              return highlight.highlight('js', str).value
+              return Prism.highlight(code, Prism.languages[lang], lang);
             },
             smartypants: true,
           }

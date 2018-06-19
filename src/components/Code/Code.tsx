@@ -1,4 +1,3 @@
-import 'highlight.js/styles/github.css'
 import * as React from 'react'
 import './Code.css'
 
