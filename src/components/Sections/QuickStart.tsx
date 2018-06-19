@@ -2,13 +2,14 @@ import * as React from 'react'
 import QuickStartStep1 from '../../copy/QuickStartStep1.md'
 import QuickStartStep2 from '../../copy/QuickStartStep2.md'
 import QuickStartStep3 from '../../copy/QuickStartStep3.md'
+import { withStore } from '../../services/store'
 import { FlashyHeading } from '../FlashyHeading/FlashyHeading'
 import { InlineCode } from '../InlineCode/InlineCode'
 import { PolyglotCode } from '../PolyglotCode/PolyglotCode'
 import { SectionSubheading } from '../SectionSubheading/SectionSubheading'
 
-export function QuickStart() {
-  return <>
+export let QuickStart = withStore(({store}) =>
+  <>
     <blockquote>Welcome to Undux! Follow this guide to get up and running in a few minutes or less.</blockquote>
     <SectionSubheading href='quick-start/1'>1. Create a store</SectionSubheading>
     <p>Let's start by creating a store. Think of a store as an Object, or a Map from keys to values. Each key maps to exactly one value, and you can put as many keys as you want in your store. For this example, we'll create a store with two keys: <InlineCode>buttonText</InlineCode> and <InlineCode>clickCount</InlineCode>.</p>
@@ -35,7 +36,10 @@ export function QuickStart() {
       TypeScript: 'https://stackblitz.com/edit/undux-quick-start-typescript?file=MyComponent.tsx',
       'JavaScript (ES6)': 'https://stackblitz.com/edit/undux-quick-start-es6?file=MyComponent.js'
     }} />
-    <p><a href='https://stackblitz.com/edit/js-gwo2c3?file=MyStore.js' target='_blank'>Run this code in the playground.</a></p>
+    <p><a href={store.get('language') === 'TypeScript'
+      ? 'https://stackblitz.com/edit/undux-quick-start-typescript'
+      : 'https://stackblitz.com/edit/undux-quick-start-es6'
+    } target='_blank'>Run this code in the playground.</a></p>
     <FlashyHeading>That's all there is to it.</FlashyHeading>
   </>
-}
+)
