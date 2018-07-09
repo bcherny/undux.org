@@ -23,7 +23,6 @@
 .SplashPage .SplashNav {
   flex: 1;
   font-family: 'Fira Code', Menlo, 'DejaVu Sans Mono', Monaco, 'Courier New', Courier, monospace;
-  padding: 50px;
 }
 
 .SplashPage .About {
@@ -38,4 +37,10 @@
   font-size: 26px;
   font-weight: 600;
   line-height: 48px;
+}
+
+@media only screen and (max-device-width: 700px) {
+  .SplashPage .About {
+    display: none;
+  }
 }

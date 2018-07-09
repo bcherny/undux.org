@@ -8,5 +8,9 @@ export let withEffects: Plugin<State> = store => {
     localStorage.setItem('undux-store', JSON.stringify({ language }))
   )
 
+  store.on('route').subscribe(() =>
+    store.set('isMenuOpen')(false)
+  )
+
   return store
 }

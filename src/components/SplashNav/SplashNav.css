@@ -25,3 +25,21 @@
 .SplashNav a .Icon {
   margin: 0 5px -5px 0;
 }
+
+@media only screen and (max-device-width: 700px) {
+  .SplashNav {
+    margin-top: 20px;
+    padding: 0;
+    width: 100%;
+  }
+
+  .SplashNav a {
+    border-top: 1px solid #ddd;
+    display: block;
+    font-size: 1.4em;
+  }
+
+  .SplashNav li:last-of-type a {
+    border-bottom: 1px solid #ddd;
+  }
+}

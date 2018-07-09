@@ -10,15 +10,22 @@
 
 .Header .Logo {
   flex: 1;
-  width: 400px;
+  max-width: 400px;
 }
 
 .Header h2 {
   color: #666;
   font-size: 26px;
   font-weight: 400;
-  line-height: 80px;
+  line-height: 40px;
 }
+
+@media only screen and (max-device-width: 700px) {
+  .Header {
+    width: 90%;
+  }
+}
+
 /*
 .Header h2 {
 	background: #222 -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;

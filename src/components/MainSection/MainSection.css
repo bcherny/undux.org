@@ -20,3 +20,15 @@
 .MainSection .Docs .Code .LanguageToggler {
   padding-right: 80px;
 }
+
+@media only screen and (max-device-width: 700px) {
+  .MainSection {
+    padding: 50px 0 0;
+    position: static;
+      left: 0;
+  }
+
+  .MainSection > * {
+    padding: 0 20px;
+  }
+}

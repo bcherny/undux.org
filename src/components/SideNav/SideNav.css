@@ -45,6 +45,10 @@
   padding: 10px 20px 10px 40px;
 }
 
+.SideNav .ToggleNav {
+  display: none;
+}
+
 .Page .SideNav ul {
   margin: 0;
 }
@@ -52,4 +56,19 @@
 .Page .SideNav li {
   list-style: none;
   margin: 0;
+}
+
+@media only screen and (max-device-width: 700px) {
+  .SideNav {
+    position: fixed;
+      bottom: 0;
+      left: -300px;
+      top: 0;
+    transition: left .1s ease-in-out;
+    z-index: 1;
+  }
+
+  .SideNav.-Open {
+    left: 0;
+  }
 }

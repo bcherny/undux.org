@@ -4,11 +4,13 @@ import { withEffects } from './effects'
 import { withHashSync } from './hashSync'
 
 export type State = {
+  isMenuOpen: boolean
   language: Language
   route: [Route] | [Route, string]
 }
 
 let initialState: State = {
+  isMenuOpen: false,
   language: 'JavaScript (ES6)',
   route: ['']
 }

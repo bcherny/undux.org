@@ -55,6 +55,12 @@
   text-decoration: none;
 }
 
+@media only screen and (max-device-width: 700px) {
+  .Code {
+    overflow: auto;
+  }
+}
+
 /**
 * GHColors theme by Avi Aryan (http://aviaryan.in)
 * Inspired by Github syntax coloring

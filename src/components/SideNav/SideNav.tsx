@@ -6,7 +6,7 @@ import { Logo } from '../Logo/Logo'
 import './SideNav.css'
 
 export let SideNav = withStore(({store}) =>
-  <nav className='SideNav'>
+  <nav className={'SideNav' + (store.get('isMenuOpen') ? ' -Open' : '')}>
     <a onClick={() => store.set('route')([''])}>
       <Logo />
     </a>
