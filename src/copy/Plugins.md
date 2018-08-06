@@ -1,9 +1,9 @@
 ts
 ```ts
-import { Plugin } from 'undux'
-import { State } from './exampleStore'
+import { Effect } from 'undux'
+import { State } from './ExampleStore'
 
-const withLocalStorage: Plugin<State> = store => {
+const withLocalStorage: Effect<State> = store => {
 
   // Listen on all events
   store.onAll().subscribe(({ key, previousValue, value }) =>
@@ -16,14 +16,16 @@ const withLocalStorage: Plugin<State> = store => {
 
   return store
 }
+
+export default withLocalStorage
 ```
 
 flow
-```ts
-import type { Plugin } from 'undux'
-import type { State } from './exampleStore'
+```js
+import type { Effect } from 'undux'
+import type { State } from './ExampleStore'
 
-const withLocalStorage: Plugin<State> = store => {
+const withLocalStorage: Effect<State> = store => {
 
   // Listen on all events
   store.onAll().subscribe(({ key, previousValue, value }) =>
@@ -36,10 +38,12 @@ const withLocalStorage: Plugin<State> = store => {
 
   return store
 }
+
+export default withLocalStorage
 ```
 
 es6
-```ts
+```js
 function withLocalStorage(store) {
 
   // Listen on all events
@@ -53,10 +57,12 @@ function withLocalStorage(store) {
 
   return store
 }
+
+export default withLocalStorage
 ```
 
 es5
-```ts
+```js
 function withLocalStorage(store) {
 
   // Listen on all events
@@ -70,4 +76,6 @@ function withLocalStorage(store) {
 
   return store
 }
+
+module.exports = withLocalStorage
 ```

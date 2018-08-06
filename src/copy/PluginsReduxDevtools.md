@@ -1,27 +1,27 @@
 ts
 ```ts
-import { createStore, withReduxDevtools } from 'undux'
+import { createConnectedStore, withReduxDevtools } from 'undux'
 
-let store = withReduxDevtools(createStore(..))
+let {withStore, Container} = createConnectedStore(initialState, withReduxDevtools)
 ```
 
 flow
 ```js
-import { createStore, withReduxDevtools } from 'undux'
+import { createConnectedStore, withReduxDevtools } from 'undux'
 
-let store = withReduxDevtools(createStore(..))
+let {withStore, Container} = createConnectedStore(initialState, withReduxDevtools)
 ```
 
 es6
 ```js
-import { createStore, withReduxDevtools } from 'undux'
+import { createConnectedStore, withReduxDevtools } from 'undux'
 
-let store = withReduxDevtools(createStore(..))
+let {withStore, Container} = createConnectedStore(initialState, withReduxDevtools)
 ```
 
 es5
 ```js
 var undux = require('undux')
 
-var store = undux.withReduxDevtools(undux.createStore(..))
+var Store = undux.createConnectedStore(initialState, undux.withReduxDevtools)
 ```

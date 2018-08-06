@@ -1,27 +1,27 @@
 ts
 ```ts
-import { createStore, withLogger } from 'undux'
+import { createConnectedStore, withLogger } from 'undux'
 
-let store = withLogger(createStore(..))
+let {withStore, Container} = createConnectedStore(initialState, withLogger)
 ```
 
 flow
 ```js
-import { createStore, withLogger } from 'undux'
+import { createConnectedStore, withLogger } from 'undux'
 
-let store = withLogger(createStore(..))
+let {withStore, Container} = createConnectedStore(initialState, withLogger)
 ```
 
 es6
 ```js
-import { createStore, withLogger } from 'undux'
+import { createConnectedStore, withLogger } from 'undux'
 
-let store = withLogger(createStore(..))
+let {withStore, Container} = createConnectedStore(initialState, withLogger)
 ```
 
 es5
 ```js
 var undux = require('undux')
 
-var store = undux.withLogger(undux.createStore(..))
+var Store = undux.createConnectedStore(initialState, undux.withLogger)
 ```
