@@ -1,15 +1,14 @@
 import * as React from 'react'
-import { Subscription } from 'rxjs'
 import { StoreProps, withStore } from '../../services/store'
 import './MainSection.css'
 
 type State = {
-  subscriptions: Subscription[]
+  subscriptions: {unsubscribe(): void}[]
 }
 
 export let MainSection = withStore(class extends React.Component<StoreProps, State> {
   div = React.createRef<HTMLDivElement>()
-  state = {
+  state: State = {
     subscriptions: [
       this.props.store.on('route').subscribe(route => {
         let div = this.div.current

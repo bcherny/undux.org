@@ -6,12 +6,12 @@
   "dependencies": {
     "feather-icons": "^4.7.3",
     "highlight.js": "^9.12.0",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0",
-    "react-feather": "^1.1.0",
-    "react-scripts-ts": "2.16.0",
-    "rxjs": "^6.2.0",
-    "undux": "^4.6.2"
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-feather": "^1.1.1",
+    "react-scripts-ts": "2.17.0",
+    "rxjs": "^6.2.2",
+    "undux": "^5.0.0-alpha.6"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -23,11 +23,11 @@
   },
   "devDependencies": {
     "@css-blocks/webpack": "^0.19.0",
-    "@mdx-js/loader": "^0.10.0",
+    "@mdx-js/loader": "^0.15.0-2",
     "@types/feather-icons": "^4.7.0",
-    "@types/jest": "^23.0.0",
-    "@types/node": "10.0.4",
-    "@types/react": "^16.3.17",
+    "@types/jest": "^23.3.1",
+    "@types/node": "10.5.6",
+    "@types/react": "^16.4.7",
     "@types/react-dom": "^16.0.6",
     "gh-pages": "^1.2.0",
     "html-loader": "^0.5.5",
@@ -36,6 +36,6 @@
     "react-app-rewired": "^1.5.2",
     "react-scripts": "^1.1.4",
     "remark-highlight.js": "^5.0.0",
-    "typescript": "^2.9.1"
+    "typescript": "^3.0.1"
   }
 }
