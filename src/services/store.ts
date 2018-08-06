@@ -1,9 +1,9 @@
-import { createConnectedStore, Store } from 'undux'
+import { createConnectedStore, Effect, Store as StoreType } from 'undux'
 import { Language, Route } from '../datatypes'
 import { withEffects } from './effects'
 import { withHashSync } from './hashSync'
 
-export type State = {
+type State = {
   isMenuOpen: boolean
   language: Language
   route: [Route] | [Route, string]
@@ -29,6 +29,10 @@ export let {Container, withStore} = createConnectedStore(
   s => withHashSync(withEffects(s))
 )
 
+export type Store = StoreType<State>
+
+export type StoreEffect = Effect<State>
+
 export type StoreProps = {
-  store: Store<State>
+  store: Store
 }

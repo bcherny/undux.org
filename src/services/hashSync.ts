@@ -1,12 +1,11 @@
 import { fromEvent } from 'rxjs'
 import { map } from 'rxjs/operators'
-import { Plugin, Store } from 'undux'
 import { Route } from '../datatypes'
-import { State } from './store'
+import { Store, StoreEffect } from './store'
 
 type ParsedHash = [undefined, undefined] | [Route, undefined] | [Route, string]
 
-export let withHashSync: Plugin<State> = store => {
+export let withHashSync: StoreEffect = store => {
 
   // Route -> URL hash
   store.on('route').subscribe(_ =>
@@ -24,7 +23,7 @@ export let withHashSync: Plugin<State> = store => {
   return store
 }
 
-function syncHashToStore(store: Store<State>, [route, subroute]: ParsedHash) {
+function syncHashToStore(store: Store, [route, subroute]: ParsedHash) {
   let current = store.get('route')
   if (route !== undefined && subroute !== undefined && (route !== current[0] || subroute !== current[1])) {
     return store.set('route')([route, subroute])

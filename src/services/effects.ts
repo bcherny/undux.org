@@ -1,7 +1,6 @@
-import { Plugin } from 'undux'
-import { State } from './store'
+import { StoreEffect } from './store'
 
-export let withEffects: Plugin<State> = store => {
+export let withEffects: StoreEffect = store => {
 
   // Save language to localStorage
   store.on('language').subscribe(language =>
