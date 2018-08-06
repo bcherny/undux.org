@@ -11,7 +11,7 @@ export type State = {
 
 let initialState: State = {
   isMenuOpen: false,
-  language: 'JavaScript (ES6)',
+  language: 'TypeScript',
   route: ['']
 }
 
