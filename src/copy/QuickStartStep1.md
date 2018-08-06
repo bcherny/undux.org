@@ -1,7 +1,7 @@
 ts
 ```ts
 import { createConnectedStore, Effect } from 'undux'
-import { withEffects } from './MyEffects'
+import effects from './MyEffects'
 
 // Declare your store's types.
 type State = {
@@ -16,7 +16,7 @@ const initialState: State = {
 }
 
 // Create & export a store with an initial value.
-export default createConnectedStore(initialState, withEffects)
+export default createConnectedStore(initialState, effects)
 
 // Export prop types for React.
 export type StoreProps = {
@@ -31,7 +31,7 @@ flow
 ```ts
 import type { Effect, Store } from 'undux'
 import { createConnectedStore } from 'undux'
-import { withEffects } from './MyEffects'
+import effects from './MyEffects'
 
 // Declare your store's types.
 type State = {|
@@ -46,7 +46,7 @@ const initialState: State = {
 }
 
 // Create & export a store with an initial value.
-export default createConnectedStore(initialState, withEffects)
+export default createConnectedStore(initialState, effects)
 
 // Export prop types for React.
 export type StoreProps = {|
@@ -60,7 +60,7 @@ export type StoreEffect = Effect<State>
 es6
 ```js
 import { createConnectedStore } from 'undux'
-import { withEffects } from './MyEffects'
+import effects from './MyEffects'
 
 // Declare your store's initial state.
 const initialState = {
@@ -69,7 +69,7 @@ const initialState = {
 }
 
 // Create & export a store with an initial value.
-export default createConnectedStore(initialState, withEffects)
+export default createConnectedStore(initialState, effects)
 ```
 
 es5
@@ -86,6 +86,6 @@ var initialState = {
 // Create & export a store with an initial value.
 module.exports = undux.createConnectedStore(
   initialState,
-  effects.withEffects
+  effects
 )
 ```

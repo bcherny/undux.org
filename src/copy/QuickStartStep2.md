@@ -2,7 +2,7 @@ ts
 ```ts
 import { StoreEffect } from './MyStore'
 
-export let withEffects: StoreEffect = store => {
+let effects: StoreEffect = store => {
   store
     .on('buttonText')
     .subscribe(buttonText =>
@@ -10,13 +10,15 @@ export let withEffects: StoreEffect = store => {
     )
   return store
 }
+
+export default effects
 ```
 
 flow
 ```ts
 import type { StoreEffect } from './MyStore'
 
-export let withEffects: StoreEffect = store => {
+let effects: StoreEffect = store => {
   store
     .on('buttonText')
     .subscribe(buttonText =>
@@ -24,11 +26,13 @@ export let withEffects: StoreEffect = store => {
     )
   return store
 }
+
+export default effects
 ```
 
 es6
 ```js
-export function withEffects(store) {
+let effects = store => {
   store
     .on('buttonText')
     .subscribe(buttonText =>
@@ -36,11 +40,13 @@ export function withEffects(store) {
     )
   return store
 }
+
+export default effects
 ```
 
 es5
 ```js
-module.exports.withEffects = function(store) {
+function effects(store) {
   store
     .on('buttonText')
     .subscribe(function (buttonText) {
@@ -48,4 +54,6 @@ module.exports.withEffects = function(store) {
     })
   return store
 }
+
+module.exports = effects
 ```
