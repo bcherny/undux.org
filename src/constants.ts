@@ -6,6 +6,7 @@ export const ROUTES: RouteWithSubroutes[] = [
   ['install', 'Install', []],
   ['quick-start', 'Quick Start', []],
   ['api', 'API', [
+    ['createConnectedStore', 'createConnectedStore'],
     ['createStore', 'createStore', {asOf: '5.0.0'}],
     ['connect', 'connect', {asOf: '5.0.0'}],
     ['get', 'store.get'],
