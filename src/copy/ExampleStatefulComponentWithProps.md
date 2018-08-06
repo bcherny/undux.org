@@ -1,33 +1,39 @@
 ts
 ```ts
-import { StoreProps, withStore } from './store'
+// MyComponent.ts
+import Store, { StoreProps } from './MyStore'
 
 type Props = StoreProps & {
   foo: number
 }
 
-let MyComponent = withStore(class extends React.Component<Props> {
+class MyComponent extends React.Component<Props> {
   render() {
     return <div>
       Today is {this.props.store.get('today')}
       Foo is {this.props.foo}
     </div>
   }
-})
+}
 
+export default Store.withStore(MyComponent)
+
+// MyConsumer.ts
 <MyComponent foo={3} />
 ```
 
 flow
 ```js
-import { StoreProps, withStore } from './store'
+// MyComponent.js
+import type { StoreProps } from './MyStore'
+import Store from './MyStore'
 
 type Props = {|
   ...StoreProps,
   foo: number
 |}
 
-let MyComponent = withStore(class extends React.Component<Props> {
+class MyComponent extends React.Component<Props> {
   render() {
     return <div>
       Today is {this.props.store.get('today')}
@@ -36,14 +42,18 @@ let MyComponent = withStore(class extends React.Component<Props> {
   }
 })
 
+export default Store.withStore(MyComponent)
+
+// MyConsumer.js
 <MyComponent foo={3} />
 ```
 
 es6
 ```js
-import { withStore } from './store'
+// MyComponent.js
+import Store from './MyStore'
 
-let MyComponent = withStore(class extends React.Component {
+class MyComponent extends React.Component {
   render() {
     return <div>
       Today is {this.props.store.get('today')}
@@ -52,15 +62,19 @@ let MyComponent = withStore(class extends React.Component {
   }
 })
 
+export default Store.withStore(MyComponent)
+
+// MyConsumer.js
 <MyComponent foo={3} />
 ```
 
 es5
 ```js
+// MyComponent.js
 var createReactClass = require('create-react-class')
-var store = require('./store')
+var Store = require('./MyStore')
 
-var MyComponent = store.withStore(createReactClass({
+var MyComponent = Store.withStore(createReactClass({
   render() {
     return <div>
       Today is {this.props.store.get('today')}
@@ -69,5 +83,8 @@ var MyComponent = store.withStore(createReactClass({
   }
 }))
 
+module.exports = MyComponent
+
+// MyConsumer.js
 <MyComponent foo={3} />
 ```

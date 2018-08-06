@@ -1,64 +1,81 @@
 ts
-```ts
-import { withStore } from './store'
+```tsx
+// MyComponent.ts
+import Store, {StoreProps} from './MyStore'
 
-type Props = {
+type Props = StoreProps & {
   foo: number
 }
 
-let MyComponent = withStore<Props>(({ foo, store }) =>
-  <div>
+function MyComponent({ foo, store }: Props) {
+  return <div>
     Today is {store.get('today')}
     Foo is {foo}
   </div>
-)
+}
 
+export default Store.withStore(MyComponent)
+
+// MyConsumer.ts
 <MyComponent foo={3} />
 ```
 
 flow
 ```js
-import { StoreProps, withStore } from './store'
+// MyComponent.js
+import type { StoreProps } from './MyStore'
+import Store from './MyStore'
 
 type Props = {|
   ...StoreProps,
   foo: number
 |}
 
-let MyComponent = withStore(({ foo, store }: Props) =>
-  <div>
+function MyComponent({ foo, store }: Props) {
+  return <div>
     Today is {store.get('today')}
     Foo is {foo}
   </div>
-)
+}
 
+export default Store.withStore(MyComponent)
+
+// MyConsumer.js
 <MyComponent foo={3} />
 ```
 
 es6
 ```js
-import { withStore } from './store'
+// MyComponent.js
+import Store from './MyStore'
 
-let MyComponent = withStore(({ foo, store }) =>
-  <div>
+function MyComponent({ foo, store }) {
+  return <div>
     Today is {store.get('today')}
     Foo is {foo}
   </div>
-)
+})
 
+export default Store.withStore(MyComponent)
+
+// MyConsumer.js
 <MyComponent foo={3} />
 ```
 
 es5
 ```js
-var store = require('./store')
+// MyComponent.js
+var Store = require('./MyStore')
 
-var MyComponent = store.withStore(function(props) {
+function MyComponent(props) {
   return <div>
     Today is {props.store.get('today')}
     Foo is {props.foo}
   </div>
-})
+}
 
+module.exports = Store.withStore(MyComponent)
+
+// MyConsumer.js
 <MyComponent foo={3} />
 ```
