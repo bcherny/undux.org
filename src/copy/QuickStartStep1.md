@@ -1,6 +1,6 @@
 ts
 ```ts
-import { connect, createStore, Plugin } from 'undux'
+import { createConnectedStore, Effect } from 'undux'
 import { withEffects } from './MyEffects'
 
 // Declare your store's types.
@@ -15,24 +15,22 @@ const initialState: State = {
   clickCount: 0
 }
 
-// Create a store with an initial value.
-const store = withEffects(createStore(initialState))
-
-// Export a connector function for React.
-export const withStore = connect(store)
+// Create & export a store with an initial value.
+export default createConnectedStore(initialState, withEffects)
 
 // Export prop types for React.
 export type StoreProps = {
   store: typeof store
 }
 
-// Export a concrete Plugin type for effects.
-export type StorePlugin = Plugin<State>
+// Export a concrete Effect type for effects.
+export type StoreEffect = Effect<State>
 ```
 
 flow
 ```ts
-import { connect, createStore, Plugin } from 'undux'
+import type { Effect, Store } from 'undux'
+import { createConnectedStore } from 'undux'
 import { withEffects } from './MyEffects'
 
 // Declare your store's types.
@@ -47,24 +45,21 @@ const initialState: State = {
   clickCount: 0
 }
 
-// Create a store with an initial value.
-const store = withEffects(createStore(initialState))
-
-// Export a connector function for React.
-export const withStore = connect(store)
+// Create & export a store with an initial value.
+export default createConnectedStore(initialState, withEffects)
 
 // Export prop types for React.
 export type StoreProps = {|
-  store: typeof store
+  store: Store<State>
 |}
 
-// Export a concrete Plugin type for effects.
-export type StorePlugin = Plugin<State>
+// Export a concrete Effect type for effects.
+export type StoreEffect = Effect<State>
 ```
 
 es6
 ```js
-import { connect, createStore } from 'undux'
+import { createConnectedStore } from 'undux'
 import { withEffects } from './MyEffects'
 
 // Declare your store's initial state.
@@ -73,11 +68,8 @@ const initialState = {
   clickCount: 0
 }
 
-// Create a store with an initial value.
-const store = withEffects(createStore(initialState))
-
-// Export a connector function for React.
-export const withStore = connect(store)
+// Create & export a store with an initial value.
+export default createConnectedStore(initialState, withEffects)
 ```
 
 es5
@@ -91,11 +83,9 @@ var initialState = {
   clickCount: 0
 }
 
-// Create a store with an initial value.
-var store = effects.withEffects(
-  undux.createStore(initialState)
+// Create & export a store with an initial value.
+module.exports = undux.createConnectedStore(
+  initialState,
+  effects.withEffects
 )
-
-// Export a connector function for React.
-module.exports.withStore = undux.connect(store)
 ```

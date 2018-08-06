@@ -1,8 +1,8 @@
 ts
 ```ts
-import { StorePlugin } from './MyStore'
+import { StoreEffect } from './MyStore'
 
-export let withEffects: StorePlugin = store => {
+export let withEffects: StoreEffect = store => {
   store
     .on('buttonText')
     .subscribe(buttonText =>
@@ -14,9 +14,9 @@ export let withEffects: StorePlugin = store => {
 
 flow
 ```ts
-import type { StorePlugin } from './MyStore'
+import type { StoreEffect } from './MyStore'
 
-export let withEffects: StorePlugin = store => {
+export let withEffects: StoreEffect = store => {
   store
     .on('buttonText')
     .subscribe(buttonText =>

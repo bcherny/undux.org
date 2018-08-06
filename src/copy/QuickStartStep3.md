@@ -1,76 +1,81 @@
 ts
 ```tsx
-import * as React from 'react'
-import { StoreProps, withStore } from './MyStore'
+import React from 'react'
+import Store, { StoreProps } from './MyStore'
 
 class MyComponent extends React.Component<StoreProps> {
   render() {
-    return <div>
+    const {store} = this.props
+    return <>
       You clicked the button {store.get('clickCount')} times
       <button onClick={() =>
         store.set('clickCount')(store.get('clickCount') + 1)
       }>{store.get('buttonText')}</button>
-    </div>
+    </>
   }
 }
 
 // Update the component when the store updates
-export default withStore(MyComponent)
+export default Store.withStore(MyComponent)
 ```
 
 flow
-```jsx
+```js
+import type { StoreProps } from './MyStore'
 import React from 'react'
-import { StoreProps, withStore } from './MyStore'
+import Store from './MyStore'
 
 class MyComponent extends React.Component<StoreProps> {
   render() {
-    return <div>
+    const {store} = this.props
+    return <>
       You clicked the button {store.get('clickCount')} times
       <button onClick={() =>
         store.set('clickCount')(store.get('clickCount') + 1)
       }>{store.get('buttonText')}</button>
-    </div>
+    </>
   }
 }
 
 // Update the component when the store updates
-export default withStore(MyComponent)
+export default Store.withStore(MyComponent)
 ```
 
 es6
 ```js
 import React from 'react'
-import { withStore } from './MyStore'
+import Store from './MyStore'
 
 class MyComponent extends React.Component {
   render() {
-    return <div>
+    const {store} = this.props
+    return <>
       You clicked the button {store.get('clickCount')} times
       <button onClick={() =>
         store.set('clickCount')(store.get('clickCount') + 1)
       }>{store.get('buttonText')}</button>
-    </div>
+    </>
   }
 }
 
 // Update the component when the store updates
-export default withStore(MyComponent)
+export default Store.withStore(MyComponent)
 ```
 
 es5
 ```js
-var store = require('./MyStore')
+var React = require('react')
+var Store = require('./MyStore')
 
 function MyComponent(props) {
-  return <div>
-    You clicked the button {store.get('clickCount')} times.
+  return <>
+    You clicked the button {props.store.get('clickCount')} times
     <button onClick={function() {
-      store.set('clickCount')(store.get('clickCount') + 1)
-    }}>{store.get('buttonText')}</button>
-  </div>
+      props.store.set('clickCount')(props.store.get('clickCount') + 1)
+    }}>{props.store.get('buttonText')}</button>
+  </>
 }
 
 // Update the component when the store updates
-module.exports = store.withStore(MyComponent)
+module.exports = Store.withStore(MyComponent)
 ```
