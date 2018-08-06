@@ -7,11 +7,11 @@ export const ROUTES: RouteWithSubroutes[] = [
   ['quick-start', 'Quick Start', []],
   ['api', 'API', [
     ['createConnectedStore', 'createConnectedStore'],
-    ['createStore', 'createStore', {asOf: '5.0.0'}],
-    ['connect', 'connect', {asOf: '5.0.0'}],
     ['get', 'store.get'],
     ['set', 'store.set'],
-    ['on', 'store.on']
+    ['on', 'store.on'],
+    ['createStore', 'createStore', {asOf: '5.0.0'}],
+    ['connect', 'connect', {asOf: '5.0.0'}]
   ]],
   ['plugins', 'Plugins', []],
   ['examples', 'Examples & Usage', []],
