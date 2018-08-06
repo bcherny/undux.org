@@ -2,6 +2,7 @@ import * as React from 'react'
 import APIConnect from '../../copy/APIConnect.md'
 import APIConnectExport from '../../copy/APIConnectExport.md'
 import APICreateConnectedStore from '../../copy/APICreateConnectedStore.md'
+import APICreateConnectedStoreWithEffects from '../../copy/APICreateConnectedStoreWithEffects.md'
 import APICreateStore from '../../copy/APICreateStore.md'
 import APIGet from '../../copy/APIGet.md'
 import APIOn from '../../copy/APIOn.md'
@@ -28,6 +29,9 @@ export function API() {
       <li><InlineCode>withStore</InlineCode>: A <a href='https://reactjs.org/docs/higher-order-components.html' target='_blank'>Higher Order React Component</a> (HOC) that's connected to your store. Use it to wrap your own React components to connect them to the store too. The HOC will pass your store into every component you wrap it with as <InlineCode>props.store</InlineCode>. Connected components re-render automatically whenever the store updates.</li>
       <li><InlineCode>Container</InlineCode>: A React component that creates a new instance of your store. Put it at the root of your application, so it wraps any <InlineCode>withStore</InlineCode>-wrapped components. For each <InlineCode>{'<Container />'}</InlineCode> you render, Undux will create a new store instance and pass it to each of its descendents that's wrapped in the corresponding <InlineCode>withStore</InlineCode> function.</li>
     </ul>
+
+    <p>To update a field in response to another field changing, use <em>effects</em>:</p>
+    <PolyglotCode code={APICreateConnectedStoreWithEffects} filename='' />
 
     <SectionSubheading href='api/createStore'>
       <InlineCode>createStore(initialState)</InlineCode>

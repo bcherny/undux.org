@@ -1,6 +1,6 @@
 ts
 ```ts
-import { createStoreConnected } from 'undux'
+import { createConnectedStore } from 'undux'
 
 type State = {
   kittens: number,
@@ -14,14 +14,14 @@ let initialState: State = {
   rabbits: undefined
 }
 
-let {withStore, Container} = createStoreConnected(initialState)
+let {withStore, Container} = createConnectedStore(initialState)
 
 export {withStore, Container}
 ```
 
 flow
 ```ts
-import { createStoreConnected } from 'undux'
+import { createConnectedStore } from 'undux'
 
 type State = {|
   kittens: number,
@@ -35,16 +35,16 @@ let initialState: State = {
   rabbits: undefined
 }
 
-let {withStore, Container} = createStoreConnected(initialState)
+let {withStore, Container} = createConnectedStore(initialState)
 
 export {withStore, Container}
 ```
 
 es6
 ```js
-import { createStoreConnected } from 'undux'
+import { createConnectedStore } from 'undux'
 
-let {withStore, Container} = createStoreConnected({
+let {withStore, Container} = createConnectedStore({
   kittens: 12,
   puppies: ['babka', 'spot'],
   rabbits: undefined
@@ -57,7 +57,7 @@ es5
 ```js
 var undux = require('undux')
 
-var store = undux.createStoreConnected({
+var store = undux.createConnectedStore({
   kittens: 12,
   puppies: ['babka', 'spot'],
   rabbits: undefined
