@@ -6,10 +6,10 @@ store
   .on('today')
   .pipe(
     filter(_ => _.getTime() % 2 === 0), // only even timestamps
-    debounce(100)                       // fire at most every 100 milliseconds
+    debounceTime(100)                   // fire at most every 100 milliseconds
   )
   .subscribe(value =>
-    alert('Today changed to: ' + value.toISOString())
+    alert(`Today changed to: ${value.toISOString()}`)
   )
 ```
 
@@ -20,13 +20,11 @@ import {filter, throttle} from 'rxjs/operators'
 store
   .on('today')
   .pipe(
-    filter(value =>
-      value.getTime() % 2 === 0          // only even timestamps
-    ),
-    throttle(100)                        // fire at most every 100 milliseconds
+    filter(_ => _.getTime() % 2 === 0), // only even timestamps
+    debounceTime(100)                   // fire at most every 100 milliseconds
   )
   .subscribe(value =>
-    alert('Today changed to: ' + value.toISOString())
+    alert(`Today changed to: ${value.toISOString()}`)
   )
 ```
 
@@ -37,27 +35,25 @@ import {filter, throttle} from 'rxjs/operators'
 store
   .on('today')
   .pipe(
-    filter(value =>
-      value.getTime() % 2 === 0          // only even timestamps
-    ),
-    throttle(100)                        // fire at most every 100 milliseconds
+    filter(_ => _.getTime() % 2 === 0), // only even timestamps
+    debounceTime(100)                   // fire at most every 100 milliseconds
   )
   .subscribe(value =>
-    alert('Today changed to: ' + value.toISOString())
+    alert(`Today changed to: ${value.toISOString()}`)
   )
 ```
 
 es5
 ```js
-import {filter, throttle} from 'rxjs/operators'
+var operators = require('rxjs/operators')
 
 store
   .on('today')
   .pipe(
-    filter(function(value) {
-      return value.getTime() % 2 === 0  // only even timestamps
+    operators.filter(function(_) {
+      return _.getTime() % 2 === 0      // only even timestamps
     }),
-    throttle(100)                       // fire at most every 100 milliseconds
+    operators.debounceTime(100)         // fire at most every 100 milliseconds
   )
   .subscribe(function(value) {
     alert('Today changed to: ' + value.toISOString())

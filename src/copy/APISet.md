@@ -28,12 +28,14 @@ let MyComponent = withStore(class extends React.Component<StoreProps> {
 
     // The store is totally covered with static types, so you can't
     // do illegal things like set a key that doesn't exist...
-    this.props.store.set('kitenz')(13) // Compile Error: Argument of type '"kitenz"'
-                        // is not assignable to parameter of type '"kittens"'.
+    this.props.store.set('kitenz')(13) // Compile Error: Argument of type
+                        // '"kitenz"' is not assignable to parameter of
+                        // type '"kittens"'.
 
     // ...Or set the wrong type of value.
-    this.props.store.set('kittens')('one million') // Compile Error: Argument of type
-                        // 'string' is not assignable to parameter of type 'number'.
+    this.props.store.set('kittens')('one million') // Compile Error: Argument
+                        // of type 'string' is not assignable to parameter
+                        // of type 'number'.
   }
 })
 ```
@@ -69,12 +71,14 @@ let MyComponent = withStore(class extends React.Component<StoreProps> {
 
     // The store is totally covered with static types, so you can't
     // do illegal things like set a key that doesn't exist...
-    this.props.store.set('kitenz')(13) // Compile Error: Argument of type '"kitenz"'
-                        // is not assignable to parameter of type '"kittens"'.
+    this.props.store.set('kitenz')(13) // Compile Error: Argument of type
+                        // '"kitenz"' is not assignable to parameter of
+                        // type '"kittens"'.
 
     // ...Or set the wrong type of value.
-    this.props.store.set('kittens')('one million') // Compile Error: Argument of type
-                        // 'string' is not assignable to parameter of type 'number'.
+    this.props.store.set('kittens')('one million') // Compile Error: Argument
+                        // of type 'string' is not assignable to parameter of
+                        // type 'number'.
   }
 })
 ```
