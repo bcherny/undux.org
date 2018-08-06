@@ -2,6 +2,7 @@ import * as React from 'react'
 import { ExternalLink, Github } from 'react-feather'
 import { ROUTES } from '../../constants'
 import { withStore } from '../../services/store'
+import { DeprecatedSmall } from '../DeprecatedSmall/DeprecatedSmall'
 import { Logo } from '../Logo/Logo'
 import './SideNav.css'
 
@@ -18,14 +19,20 @@ export let SideNav = withStore(({store}) =>
             href={'#' + route}
           >{text}</a>
           <ul>
-            {subroutes.map(([subroute, subtext]) =>
-              <li key={subroute}>
+            {subroutes.map(([subroute, subtext, deprecated]) => {
+              let isActive = store.get('route')[1]
+                && route === store.get('route')[0]
+                && subroute === store.get('route')[1]
+              return <li key={subroute}>
                 <a
-                  className={store.get('route')[1] && route === store.get('route')[0] && subroute === store.get('route')[1] ? '-Active' : ''}
+                  className={(isActive ? '-Active' : '') + (deprecated ? ' -Deprecated' : '')}
                   href={'#' + route + '/' + subroute}
-                >{subtext}</a>
+                >
+                  {subtext}
+                  {deprecated && <DeprecatedSmall asOf={deprecated.asOf} />}
+                </a>
               </li>
-            )}
+            })}
           </ul>
         </li>
       )}

@@ -1,0 +1,10 @@
+.Deprecated {
+  background: #fff8f8;
+  color: #dc1e1e;
+  display: inline-block;
+  font-size: 16px;
+  padding: 0 10px;
+  position: relative;
+    top: -24px;
+  text-transform: uppercase;
+}

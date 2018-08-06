@@ -8,20 +8,30 @@ import APISet from '../../copy/APISet.md'
 import APISetPartialApplication from '../../copy/APISetPartialApplication.md'
 import EffectsModelUpdate from '../../copy/EffectsModelUpdate.md'
 import EffectsRxSimple from '../../copy/EffectsRxSimple.md'
+import { Deprecated } from '../Deprecated/Deprecated'
 import { InlineCode } from '../InlineCode/InlineCode'
 import { PolyglotCode } from '../PolyglotCode/PolyglotCode'
 import { SectionSubheading } from '../SectionSubheading/SectionSubheading'
 
 export function API() {
   return <>
-    <SectionSubheading href='api/createStore'><InlineCode>createStore(initialState)</InlineCode></SectionSubheading>
+    <SectionSubheading href='api/createStore'>
+      <InlineCode>createStore(initialState)</InlineCode>
+    </SectionSubheading>
+    <Deprecated asOf='5.0.0' />
     <p>Use <InlineCode>createStore</InlineCode> to create a new store with an initial state. Be sure to define a key for each field on your store, even if it's <InlineCode>undefined</InlineCode> at first.</p>
     <PolyglotCode code={APICreateStore} filename='' />
-    <SectionSubheading href='api/connect'><InlineCode>connect(store)</InlineCode></SectionSubheading>
+
+    <SectionSubheading href='api/connect'>
+      <InlineCode>connect(store)</InlineCode>
+    </SectionSubheading>
+    <Deprecated asOf='5.0.0' />
+
     <p><InlineCode>connect</InlineCode> creates a <a href='https://reactjs.org/docs/higher-order-components.html' target='_blank'>Higher Order React Component</a> (HOC) that's connected to your store. Use it to wrap your own React components to connect them to the store too. The HOC will pass your store into every component you wrap it with as <InlineCode>props.store</InlineCode>. Connected components re-render automatically whenever the store updates.</p>
     <PolyglotCode code={APIConnect} filename='' />
     <p>A common pattern is to assign the HOC returned by <InlineCode>connect</InlineCode> to a variable named <InlineCode>withStore</InlineCode>, and export it for other React components to use.</p>
     <PolyglotCode code={APIConnectExport} filename='' />
+
     <SectionSubheading href='api/get'><InlineCode>store.get(key)</InlineCode></SectionSubheading>
     <p>Use <InlineCode>get</InlineCode> to read the value of a field on your store.</p>
     <PolyglotCode code={APIGet} filename='' />

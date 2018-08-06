@@ -1,0 +1,8 @@
+.DeprecatedSmall {
+  color: #dc1e1e;
+  display: inline-block;
+  float: right;
+  font-size: 12px;
+  padding: 0 20px 0 0;
+  text-transform: uppercase;
+}
