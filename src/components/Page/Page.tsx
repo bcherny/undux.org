@@ -3,12 +3,12 @@ import { Menu } from 'react-feather'
 import { ROUTES } from '../../constants'
 import { StoreProps, withStore } from '../../services/store'
 import { LanguageToggler } from '../LanguageToggler/LanguageToggler'
-import { MainSection } from '../MainSection/MainSection'
+import MainSection from '../MainSection/MainSection'
 import { PageHeading } from '../PageHeading/PageHeading'
 import { SideNav } from '../SideNav/SideNav'
 import './Page.css'
 
-export let Page = withStore(class extends React.Component<StoreProps> {
+class Page extends React.Component<StoreProps> {
   toggleMenu = () =>
     this.props.store.set('isMenuOpen')(
       !this.props.store.get('isMenuOpen')
@@ -26,4 +26,6 @@ export let Page = withStore(class extends React.Component<StoreProps> {
       </MainSection>
     </div>
   }
-})
+}
+
+export default withStore(Page)

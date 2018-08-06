@@ -6,7 +6,7 @@ type State = {
   subscriptions: {unsubscribe(): void}[]
 }
 
-export let MainSection = withStore(class extends React.Component<StoreProps, State> {
+class MainSection extends React.Component<StoreProps, State> {
   div = React.createRef<HTMLDivElement>()
   state: State = {
     subscriptions: [
@@ -28,4 +28,6 @@ export let MainSection = withStore(class extends React.Component<StoreProps, Sta
       {this.props.children}
     </section>
   }
-})
+}
+
+export default withStore(MainSection)
