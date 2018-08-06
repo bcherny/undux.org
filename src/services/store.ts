@@ -1,4 +1,4 @@
-import { connect, createStore, Store } from 'undux'
+import { createConnectedStore, Store } from 'undux'
 import { Language, Route } from '../datatypes'
 import { withEffects } from './effects'
 import { withHashSync } from './hashSync'
@@ -24,9 +24,10 @@ if (initialStateFromLocalStorage) {
   }
 }
 
-let store = withHashSync(withEffects(createStore(initialState)))
-
-export let withStore = connect(store)
+export let {Container, withStore} = createConnectedStore(
+  initialState,
+  s => withHashSync(withEffects(s))
+)
 
 export type StoreProps = {
   store: Store<State>

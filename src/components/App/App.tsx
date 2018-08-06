@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Container } from '../../services/store'
 import Page from '../Page/Page'
 import { Router } from '../Router/Router'
 import { About } from '../Sections/About'
@@ -25,7 +26,9 @@ let routes = {
 }
 
 export function App() {
-  return <div className='App'>
-    <Router routes={routes} />
-  </div>
+  return <Container>
+    <div className='App'>
+      <Router routes={routes} />
+    </div>
+  </Container>
 }
