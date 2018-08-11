@@ -1,29 +1,30 @@
 ts
 ```ts
-import { connect, createStore, Plugin } from 'undux'
+import { Effects, Store, createConnectedStore } from 'undux'
 
 type State = {
-  foo: number,
+  foo: number
   bar: string[]
 }
 
-let store = createStore<State>({
+let initialState: State = {
   foo: 12,
   bar: []
-})
-
-export let withStore = connect(store)
-
-export type StoreProps = {
-  store: typeof store
 }
 
-export type StorePlugin = Plugin<State>
+export default createConnectedStore(initialState)
+
+export type StoreProps = {
+  store: Store<State>
+}
+
+export type StoreEffects = Effects<State>
 ```
 
 flow
 ```js
-import { connect, createStore, Plugin } from 'undux'
+import type { Effects, Store } from 'undux'
+import { createConnectedStore } from 'undux'
 
 type State = {|
   foo: number,
@@ -35,37 +36,35 @@ let initialState: State = {
   bar: []
 }
 
-let store = createStore(initialState)
+export default createConnectedStore(initialState)
 
-export let withStore = connect(store)
+export type StoreProps = {|
+  store: Store<State>
+|}
 
-export type StoreProps = {
-  store: typeof store
-}
-
-export type StorePlugin = Plugin<State>
+export type StoreEffects = Effects<State>
 ```
 
 es6
 ```js
-import { connect, createStore } from 'undux'
+import { createConnectedStore } from 'undux'
 
-let store = createStore({
+let initialState = {
   foo: 12,
   bar: []
-})
+}
 
-export let withStore = connect(store)
+export default createConnectedStore(initialState)
 ```
 
 es5
 ```js
 var undux = require('undux')
 
-var store = undux.createStore({
+var initialState = {
   foo: 12,
   bar: []
-})
+}
 
-module.exports.withStore = undux.connect(store)
+module.exports = undux.createConnectedStore(initialState)
 ```
