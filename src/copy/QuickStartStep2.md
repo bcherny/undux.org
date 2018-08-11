@@ -1,8 +1,8 @@
 ts
 ```ts
-import { StoreEffect } from './MyStore'
+import { StoreEffects } from './MyStore'
 
-let effects: StoreEffect = store => {
+let effects: StoreEffects = store => {
   store
     .on('buttonText')
     .subscribe(buttonText =>
@@ -16,9 +16,9 @@ export default effects
 
 flow
 ```ts
-import type { StoreEffect } from './MyStore'
+import type { StoreEffects } from './MyStore'
 
-let effects: StoreEffect = store => {
+let effects: StoreEffects = store => {
   store
     .on('buttonText')
     .subscribe(buttonText =>

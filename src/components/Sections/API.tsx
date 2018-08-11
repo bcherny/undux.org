@@ -60,9 +60,9 @@ export function API() {
     <PolyglotCode code={APISetPartialApplication} filename='' />
     <SectionSubheading href='api/on'><InlineCode>store.on(key)</InlineCode></SectionSubheading>
     <p>Undux automatically updates your model and re-renders your React components for you. To do anything more complex -- like send a network request, or update another field on the store in response to a field changing -- use the <InlineCode>on</InlineCode> API.</p>
-    <p>We call anything that's subscribed to a field update with the <InlineCode>on</InlineCode> API an <em>Effect</em>. Effects are triggered anytime the field they're subscribed to changes.</p>
+    <p>We call anything that's subscribed to a field update with the <InlineCode>on</InlineCode> API an <em>effect</em>. Effects are triggered anytime the field they're subscribed to changes.</p>
     <PolyglotCode code={APIOn} filename='' />
-    <p>You can even use an Effect to trigger another model update.</p>
+    <p>You can even use an effect to trigger another model update.</p>
     <PolyglotCode code={EffectsModelUpdate} filename='' />
     <p><InlineCode>on</InlineCode> returns a full <a target='_blank' href='http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html'>RxJS Observable</a>, so you have fine control over how you react to a change. Effects have access to around 100 utility functions that are included with RxJS.</p>
     <PolyglotCode code={EffectsRxSimple} filename='' />

@@ -1,6 +1,6 @@
 ts
 ```ts
-import { createConnectedStore, Effect } from 'undux'
+import { createConnectedStore, Effects } from 'undux'
 import effects from './MyEffects'
 
 // Declare your store's types.
@@ -23,13 +23,13 @@ export type StoreProps = {
   store: typeof store
 }
 
-// Export a concrete Effect type for effects.
-export type StoreEffect = Effect<State>
+// Export a concrete type for effects.
+export type StoreEffects = Effects<State>
 ```
 
 flow
 ```ts
-import type { Effect, Store } from 'undux'
+import type { Effects, Store } from 'undux'
 import { createConnectedStore } from 'undux'
 import effects from './MyEffects'
 
@@ -53,8 +53,8 @@ export type StoreProps = {|
   store: Store<State>
 |}
 
-// Export a concrete Effect type for effects.
-export type StoreEffect = Effect<State>
+// Export a concrete type for effects.
+export type StoreEffects = Effects<State>
 ```
 
 es6

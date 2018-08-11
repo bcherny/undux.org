@@ -1,6 +1,6 @@
-import { StoreEffect } from './store'
+import { StoreEffects } from './store'
 
-export let withEffects: StoreEffect = store => {
+export let withEffects: StoreEffects = store => {
 
   // Save language to localStorage
   store.on('language').subscribe(language =>

@@ -1,9 +1,9 @@
 ts
 ```ts
-import { Effect } from 'undux'
+import { Effects } from 'undux'
 import { State } from './ExampleStore'
 
-const withLocalStorage: Effect<State> = store => {
+const withLocalStorage: Effects<State> = store => {
 
   // Listen on all events
   store.onAll().subscribe(({ key, previousValue, value }) =>
@@ -22,10 +22,10 @@ export default withLocalStorage
 
 flow
 ```js
-import type { Effect } from 'undux'
+import type { Effects } from 'undux'
 import type { State } from './ExampleStore'
 
-const withLocalStorage: Effect<State> = store => {
+const withLocalStorage: Effects<State> = store => {
 
   // Listen on all events
   store.onAll().subscribe(({ key, previousValue, value }) =>

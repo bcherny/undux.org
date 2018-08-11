@@ -1,4 +1,4 @@
-import { createConnectedStore, Effect, Store as StoreType } from 'undux'
+import { createConnectedStore, Effects, Store as StoreType } from 'undux'
 import { Language, Route } from '../datatypes'
 import { withEffects } from './effects'
 import { withHashSync } from './hashSync'
@@ -31,7 +31,7 @@ export let {Container, withStore} = createConnectedStore(
 
 export type Store = StoreType<State>
 
-export type StoreEffect = Effect<State>
+export type StoreEffects = Effects<State>
 
 export type StoreProps = {
   store: Store

@@ -1,11 +1,11 @@
 import { fromEvent } from 'rxjs'
 import { map } from 'rxjs/operators'
 import { Route } from '../datatypes'
-import { Store, StoreEffect } from './store'
+import { Store, StoreEffects } from './store'
 
 type ParsedHash = [undefined, undefined] | [Route, undefined] | [Route, string]
 
-export let withHashSync: StoreEffect = store => {
+export let withHashSync: StoreEffects = store => {
 
   // Route -> URL hash
   store.on('route').subscribe(_ =>

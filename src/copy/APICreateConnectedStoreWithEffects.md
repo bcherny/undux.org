@@ -1,6 +1,6 @@
 ts
 ```ts
-import { createConnectedStore, Effect } from 'undux'
+import { createConnectedStore, Effects } from 'undux'
 
 type State = {
   userId: string | null
@@ -12,7 +12,7 @@ let initialState: State = {
   friends: []
 }
 
-let effects: Effect<State> = store => {
+let effects: Effects<State> = store => {
   store
     .on('userId')
     .subscribe(async userId => {
@@ -29,7 +29,7 @@ export {withStore, Container}
 
 flow
 ```js
-import type { Effect } from 'undux'
+import type { Effects } from 'undux'
 import { createConnectedStore } from 'undux'
 
 type State = {|
@@ -42,7 +42,7 @@ let initialState: State = {
   friends: []
 }
 
-let effects: Effect<State> = store => {
+let effects: Effects<State> = store => {
   store
     .on('userId')
     .subscribe(async userId => {
