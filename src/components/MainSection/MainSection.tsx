@@ -10,10 +10,16 @@ class MainSection extends React.Component<StoreProps, State> {
   div = React.createRef<HTMLDivElement>()
   state: State = {
     subscriptions: [
-      this.props.store.on('route').subscribe(route => {
+      this.props.store.on('route').subscribe(([toproute, subroute]) => {
         let div = this.div.current
-        let subroute = route[1]
-        if (!div || subroute) {
+        if (subroute) {
+          let e = document.getElementById(toproute + '/' + subroute)
+          if (e) {
+            e.scrollIntoView()
+          }
+          return
+        }
+        if (!div) {
           return
         }
         div.scrollTop = 0
