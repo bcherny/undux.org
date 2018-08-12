@@ -17,10 +17,10 @@ export const ROUTES: RouteWithSubroutes[] = [
     ['basic-usage', 'Basic usage'],
     ['stateless-component-with-props', 'Stateless component'],
     ['class-component-with-props', 'Class component'],
-    ['derived-state', 'Derived state']
+    ['derived-state', 'Derived state'],
+    ['namespaced-state', 'Namespaced state']
   ]],
   ['plugins', 'Plugins', []],
-  // ['scaling', 'Scaling', []],
   // ['testing', 'Testing', []],
   ['about', 'About', []]
 ]

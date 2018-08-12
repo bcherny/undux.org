@@ -70,7 +70,9 @@ function effects(store) {
       store.on('y')
     )
     .pipe(
-      ops.map(([x, y]) => x + y)
+      ops.map(function(xy) {
+        return xy[0] + xy[1]
+      })
     )
     .subscribe(store.set('derived/z'))
 
