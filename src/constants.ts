@@ -13,8 +13,13 @@ export const ROUTES: RouteWithSubroutes[] = [
     ['createStore', 'createStore', {asOf: '5.0.0'}],
     ['connect', 'connect', {asOf: '5.0.0'}]
   ]],
+  ['examples', 'Examples', [
+    ['basic-usage', 'Basic usage'],
+    ['stateless-component-with-props', 'Stateless component'],
+    ['class-component-with-props', 'Class component'],
+    ['derived-state', 'Derived state']
+  ]],
   ['plugins', 'Plugins', []],
-  ['examples', 'Examples & Usage', []],
   // ['scaling', 'Scaling', []],
   // ['testing', 'Testing', []],
   ['about', 'About', []]
