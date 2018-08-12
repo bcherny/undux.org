@@ -1,6 +1,6 @@
 ts
 ```ts
-import { createConnectedStore, Effects } from 'undux'
+import { Effects, Store, createConnectedStore } from 'undux'
 import effects from './MyEffects'
 
 // Declare your store's types.
@@ -20,7 +20,7 @@ export default createConnectedStore(initialState, effects)
 
 // Export prop types for React.
 export type StoreProps = {
-  store: typeof store
+  store: Store<State>
 }
 
 // Export a concrete type for effects.

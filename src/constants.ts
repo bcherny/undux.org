@@ -1,4 +1,4 @@
-import { Route } from './datatypes'
+import { Language, Route } from './datatypes'
 
 type RouteWithSubroutes = [Route, string, [string, string, {asOf: string}?][]]
 
@@ -19,3 +19,10 @@ export const ROUTES: RouteWithSubroutes[] = [
   // ['testing', 'Testing', []],
   ['about', 'About', []]
 ]
+
+export const EXTENSIONS: Record<Language, string> = {
+  Flow: 'js',
+  'JavaScript (ES6)': 'js',
+  'JavaScript (ES5)': 'js',
+  TypeScript: 'ts'
+}

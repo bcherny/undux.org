@@ -1,6 +1,7 @@
 import 'highlight.js/styles/github.css'
 import * as React from 'react'
 import { ExternalLink } from 'react-feather'
+import { EXTENSIONS } from '../../constants'
 import { Language } from '../../datatypes'
 import { StoreProps, withStore } from '../../services/store'
 
@@ -8,21 +9,17 @@ type Props = StoreProps & {
   code: string
   filename?: string
   playgroundLinks?: Partial<Record<Language, string>>
+  shouldShowFilename?: false
 }
 
-let extensions: Record<Language, string> = {
-  Flow: 'js',
-  'JavaScript (ES6)': 'js',
-  'JavaScript (ES5)': 'js',
-  TypeScript: 'ts'
-}
-
-export let PolyglotCode = withStore<Props>(({ code, filename, playgroundLinks, store }) => {
+export let PolyglotCode = withStore<Props>(({
+  code, filename, playgroundLinks, shouldShowFilename, store
+}) => {
   let blocks = parse(code)
   let language = store.get('language')
 
   if (language in blocks) {
-    let file = filename ? `${filename}.${extensions[language]}` : ''
+    let file = shouldShowFilename && filename ? `${filename}.${EXTENSIONS[language]}` : ''
     let playgroundLink = playgroundLinks && playgroundLinks[language]
       ? <a href={playgroundLinks[language]} target='_blank'>playground <ExternalLink /></a>
       : ''
