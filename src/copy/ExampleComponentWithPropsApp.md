@@ -7,7 +7,7 @@ import Store from './MyStore'
 class MyApp extends React.Component {
   render() {
     return <Store.Container>
-      <MyComponent />
+      <MyComponent baz={3} />
     </Store.Container>
   }
 }
@@ -24,7 +24,7 @@ import Store from './MyStore'
 class MyApp extends React.Component {
   render() {
     return <Store.Container>
-      <MyComponent />
+      <MyComponent baz={3} />
     </Store.Container>
   }
 }
@@ -41,7 +41,7 @@ import Store from './MyStore'
 class MyApp extends React.Component {
   render() {
     return <Store.Container>
-      <MyComponent />
+      <MyComponent baz={3} />
     </Store.Container>
   }
 }
@@ -59,7 +59,7 @@ var Store = require('./MyStore')
 var MyApp = createReactClass({
   render() {
     return <Store.Container>
-      <MyComponent />
+      <MyComponent baz={3} />
     </Store.Container>
   }
 })
