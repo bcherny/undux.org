@@ -5,7 +5,6 @@ import ExampleComponentWithPropsApp from '../../copy/ExampleComponentWithPropsAp
 import ExampleStatefulComponentWithProps from '../../copy/ExampleStatefulComponentWithProps.md'
 import ExampleStatelessComponentWithProps from '../../copy/ExampleStatelessComponentWithProps.md'
 import ExampleStore from '../../copy/ExampleStore.md'
-import { PolyglotCode } from '../PolyglotCode/PolyglotCode'
 import { SectionSubheading } from '../SectionSubheading/SectionSubheading'
 import TabbedPolyglotCode from '../TabbedPolyglotCode/TabbedPolyglotCode'
 
@@ -24,6 +23,10 @@ export function Examples() {
       {code: ExampleStore, filename: 'MyStore'}
     ]} />
     <SectionSubheading href='examples/class-component-with-props'>React class component with extra props</SectionSubheading>
-    <PolyglotCode code={ExampleStatefulComponentWithProps} filename='' />
+    <TabbedPolyglotCode tabs={[
+      {code: ExampleStatefulComponentWithProps, filename: 'MyComponent'},
+      {code: ExampleComponentWithPropsApp, filename: 'MyApp'},
+      {code: ExampleStore, filename: 'MyStore'}
+    ]} />
   </>
 }

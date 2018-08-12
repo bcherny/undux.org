@@ -3,7 +3,7 @@ ts
 import React from 'react'
 import Store, { StoreProps } from './MyStore'
 
-class Component extends React.Component<StoreProps> {
+class MyComponent extends React.Component<StoreProps> {
   render() {
     return <>
       Foo: {this.props.store.get('foo')}
@@ -12,7 +12,7 @@ class Component extends React.Component<StoreProps> {
   }
 }
 
-export default Store.withStore(Component)
+export default Store.withStore(MyComponent)
 ```
 
 flow
@@ -21,7 +21,7 @@ import type { StoreProps } from './MyStore'
 import React from 'react'
 import Store from './MyStore'
 
-class Component extends React.Component<StoreProps> {
+class MyComponent extends React.Component<StoreProps> {
   render() {
     return <>
       Foo: {this.props.store.get('foo')}
@@ -30,7 +30,7 @@ class Component extends React.Component<StoreProps> {
   }
 }
 
-export default Store.withStore(Component)
+export default Store.withStore(MyComponent)
 ```
 
 es6
@@ -38,7 +38,7 @@ es6
 import React from 'react'
 import Store from './MyStore'
 
-class Component extends React.Component {
+class MyComponent extends React.Component {
   render() {
     return <>
       Foo: {this.props.store.get('foo')}
@@ -47,7 +47,7 @@ class Component extends React.Component {
   }
 }
 
-export default Store.withStore(Component)
+export default Store.withStore(MyComponent)
 ```
 
 es5
@@ -56,7 +56,7 @@ var createReactClass = require('create-react-class')
 var React = require('react')
 var Store = require('./MyStore')
 
-var Component = createReactClass({
+var MyComponent = createReactClass({
   render() {
     return <>
       Foo: {this.props.store.get('foo')}
@@ -65,5 +65,5 @@ var Component = createReactClass({
   }
 })
 
-module.exports = Store.withStore(Component)
+module.exports = Store.withStore(MyComponent)
 ```

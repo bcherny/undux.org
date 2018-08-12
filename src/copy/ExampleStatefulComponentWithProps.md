@@ -1,90 +1,78 @@
 ts
 ```ts
-// MyComponent.ts
-import Store, { StoreProps } from './MyStore'
+import React from 'react'
+import Store, {StoreProps} from './MyStore'
 
 type Props = StoreProps & {
-  foo: number
+  baz: number
 }
 
 class MyComponent extends React.Component<Props> {
   render() {
-    return <div>
-      Today is {this.props.store.get('today')}
-      Foo is {this.props.foo}
-    </div>
+    return <>
+      Foo: {this.props.store.get('foo')}
+      Baz: {this.props.baz}
+    </>
   }
 }
 
 export default Store.withStore(MyComponent)
-
-// MyConsumer.ts
-<MyComponent foo={3} />
 ```
 
 flow
 ```js
-// MyComponent.js
+import React from 'react'
 import type { StoreProps } from './MyStore'
 import Store from './MyStore'
 
 type Props = {|
   ...StoreProps,
-  foo: number
+  baz: number
 |}
 
 class MyComponent extends React.Component<Props> {
   render() {
-    return <div>
-      Today is {this.props.store.get('today')}
-      Foo is {this.props.foo}
-    </div>
+    return <>
+      Foo: {this.props.store.get('foo')}
+      Baz: {this.props.baz}
+    </>
   }
-})
+}
 
 export default Store.withStore(MyComponent)
-
-// MyConsumer.js
-<MyComponent foo={3} />
 ```
 
 es6
 ```js
-// MyComponent.js
+import React from 'react'
 import Store from './MyStore'
 
 class MyComponent extends React.Component {
   render() {
-    return <div>
-      Today is {this.props.store.get('today')}
-      Foo is {this.props.foo}
-    </div>
+    return <>
+      Foo: {this.props.store.get('foo')}
+      Baz: {this.props.baz}
+    </>
   }
-})
+}
 
 export default Store.withStore(MyComponent)
-
-// MyConsumer.js
-<MyComponent foo={3} />
 ```
 
 es5
 ```js
-// MyComponent.js
 var createReactClass = require('create-react-class')
+var React = require('react')
 var Store = require('./MyStore')
 
-var MyComponent = Store.withStore(createReactClass({
+var Component = createReactClass({
   render() {
-    return <div>
-      Today is {this.props.store.get('today')}
-      Foo is {this.props.foo}
-    </div>
+    return <>
+      Foo: {this.props.store.get('foo')}
+      Baz: {this.props.baz}
+    </>
   }
-}))
+})
 
-module.exports = MyComponent
-
-// MyConsumer.js
-<MyComponent foo={3} />
+module.exports = Store.withStore(MyComponent)
 ```

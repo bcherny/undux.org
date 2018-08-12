@@ -1,5 +1,6 @@
 ts
 ```ts
+import React from 'react'
 import Store, {StoreProps} from './MyStore'
 
 type Props = StoreProps & {
@@ -18,6 +19,7 @@ export default Store.withStore(MyComponent)
 
 flow
 ```js
+import React from 'react'
 import type { StoreProps } from './MyStore'
 import Store from './MyStore'
 
@@ -38,6 +40,7 @@ export default Store.withStore(MyComponent)
 
 es6
 ```js
+import React from 'react'
 import Store from './MyStore'
 
 function MyComponent({ baz, store }) {
@@ -52,6 +55,7 @@ export default Store.withStore(MyComponent)
 
 es5
 ```js
+var React = require('react')
 var Store = require('./MyStore')
 
 function MyComponent(props) {
