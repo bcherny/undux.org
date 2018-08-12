@@ -9,3 +9,9 @@
   display: block;
   text-decoration: none;
 }
+
+@media only screen and (max-device-width: 700px) {
+  .PageHeading {
+    margin-left: 20px;
+  }
+}

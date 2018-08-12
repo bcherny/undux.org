@@ -1,0 +1,21 @@
+@media only screen and (max-device-width: 700px) {
+  .LanguageToggler {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding-right: 20px;
+    position: fixed;
+      right: 0;
+      top: -10px;
+    text-align: right;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .LanguageToggler .Tabs {
+    margin-bottom: 10px;
+  }
+
+  .LanguageToggler .Tabs .Tab {
+    margin: 0;
+  }
+}

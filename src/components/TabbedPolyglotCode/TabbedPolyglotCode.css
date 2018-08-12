@@ -19,3 +19,9 @@
   border-right: 1px solid #eee;
   padding: 10px 20px;
 }
+
+@media only screen and (max-device-width: 700px) {
+  .TabbedPolyglotCode .Tabs .Tab a {
+    display: block;
+  }
+}
