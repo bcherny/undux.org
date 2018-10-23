@@ -20,7 +20,7 @@ class MyComponent extends React.Component<StoreProps> {
   }
 }
 
-export default Store.withStore(MyComponent)
+export default Store.withStores(MyComponent)
 ```
 
 flow
@@ -46,7 +46,7 @@ class MyComponent extends React.Component<StoreProps> {
   }
 }
 
-export default Store.withStore(MyComponent)
+export default Store.withStores(MyComponent)
 ```
 
 es6
@@ -71,7 +71,7 @@ class MyComponent extends React.Component {
   }
 }
 
-export default Store.withStore(MyComponent)
+export default Store.withStores(MyComponent)
 ```
 
 es5
@@ -98,5 +98,5 @@ var MyComponent = createReactClass({
   }
 })
 
-module.exports = Store.withStore(MyComponent)
+module.exports = Store.withStores(MyComponent)
 ```
