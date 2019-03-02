@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ExternalLink, Github } from 'react-feather'
+import { ExternalLink, GitHub } from 'react-feather'
 import { ROUTES } from '../../constants'
 import { withStore } from '../../services/store'
 import { DeprecatedSmall } from '../DeprecatedSmall/DeprecatedSmall'
@@ -36,7 +36,7 @@ export let SideNav = withStore(({store}) =>
           </ul>
         </li>
       )}
-      <li><a href='https://github.com/bcherny/undux'><Github />Github<ExternalLink className='Right' /></a></li>
+      <li><a href='https://github.com/bcherny/undux'><GitHub />Github<ExternalLink className='Right' /></a></li>
     </ul>
   </nav>
 )
