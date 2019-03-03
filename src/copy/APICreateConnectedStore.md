@@ -14,9 +14,9 @@ let initialState: State = {
   rabbits: undefined
 }
 
-let {withStore, Container} = createConnectedStore(initialState)
+let {useStore, withStore, Container} = createConnectedStore(initialState)
 
-export {withStore, Container}
+export {useStore, withStore, Container}
 ```
 
 flow
@@ -35,22 +35,22 @@ let initialState: State = {
   rabbits: undefined
 }
 
-let {withStore, Container} = createConnectedStore(initialState)
+let {useStore, withStore, Container} = createConnectedStore(initialState)
 
-export {withStore, Container}
+export {useStore, withStore, Container}
 ```
 
 es6
 ```js
 import { createConnectedStore } from 'undux'
 
-let {withStore, Container} = createConnectedStore({
+let {useStore, withStore, Container} = createConnectedStore({
   kittens: 12,
   puppies: ['babka', 'spot'],
   rabbits: undefined
 })
 
-export {withStore, Container}
+export {useStore, withStore, Container}
 ```
 
 es5
@@ -63,6 +63,7 @@ var store = undux.createConnectedStore({
   rabbits: undefined
 })
 
+module.exports.useStore = store.useStore
 module.exports.withStore = store.withStore
 module.exports.Container = store.Container
 ```

@@ -18,7 +18,7 @@ const initialState: State = {
 // Create & export a store with an initial value.
 export default createConnectedStore(initialState, effects)
 
-// Export prop types for React.
+// Export prop types for React (if you're using React Hooks, you can ignore this).
 export type StoreProps = {
   store: Store<State>
 }
@@ -48,7 +48,7 @@ const initialState: State = {
 // Create & export a store with an initial value.
 export default createConnectedStore(initialState, effects)
 
-// Export prop types for React.
+// Export prop types for React (if you're using React Hooks, you can ignore this).
 export type StoreProps = {|
   store: Store<State>
 |}

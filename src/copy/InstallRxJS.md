@@ -1,35 +1,35 @@
 ts
 ```ts
 // Using Yarn:
-yarn add undux
+yarn add rxjs
 
 // Or, using NPM:
-npm install undux --save
+npm install rxjs --save
 ```
 
 flow
 ```ts
 // Using Yarn:
-yarn add undux
+yarn add rxjs
 
 // Or, using NPM:
-npm install undux --save
+npm install rxjs --save
 ```
 
 es6
 ```ts
 // Using Yarn:
-yarn add undux
+yarn add rxjs
 
 // Or, using NPM:
-npm install undux --save
+npm install rxjs --save
 ```
 
 es5
 ```ts
 // Using Yarn:
-yarn add undux
+yarn add rxjs
 
 // Or, using NPM:
-npm install undux --save
+npm install rxjs --save
 ```

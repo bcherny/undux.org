@@ -1,41 +1,41 @@
 ts
 ```ts
 import React from 'react'
-import Store, {StoreProps} from './MyStore'
+import Store from './MyStore'
 
-type Props = StoreProps & {
+type Props = {
   baz: number
 }
 
-function MyComponent({ baz, store }: Props) {
+function MyComponent({ baz }: Props) {
+  let store = Store.useStore()
   return <>
     Foo: {store.get('foo')}
     Baz: {baz}
   </>
 }
 
-export default Store.withStore(MyComponent)
+export default MyComponent
 ```
 
 flow
 ```js
 import React from 'react'
-import type { StoreProps } from './MyStore'
 import Store from './MyStore'
 
 type Props = {|
-  ...StoreProps,
   baz: number
 |}
 
-function MyComponent({ baz, store }: Props) {
+function MyComponent({ baz }: Props) {
+  let store = Store.useStore()
   return <>
     Foo: {store.get('foo')}
     Baz: {baz}
   </>
 }
 
-export default Store.withStore(MyComponent)
+export default MyComponent
 ```
 
 es6
@@ -43,14 +43,15 @@ es6
 import React from 'react'
 import Store from './MyStore'
 
-function MyComponent({ baz, store }) {
+function MyComponent({ baz }) {
+  let store = Store.useStore()
   return <>
     Foo: {store.get('foo')}
     Baz: {baz}
   </>
 })
 
-export default Store.withStore(MyComponent)
+export default MyComponent
 ```
 
 es5
@@ -59,11 +60,12 @@ var React = require('react')
 var Store = require('./MyStore')
 
 function MyComponent(props) {
+  var store = Store.useStore()
   return <>
-    Foo: {props.store.get('foo')}
+    Foo: {store.get('foo')}
     Baz: {props.baz}
   </>
 }
 
-module.exports = Store.withStore(MyComponent)
+module.exports = MyComponent
 ```

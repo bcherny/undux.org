@@ -3,6 +3,21 @@ ts
 import React from 'react'
 import Store, { StoreProps } from './MyStore'
 
+// Using React Hooks:
+function MyComponentWithHooks() {
+  // Update the component when the store updates
+  const store = Store.useStore()
+  return <>
+    You clicked the button {store.get('clickCount')} times
+    <button onClick={() =>
+      store.set('clickCount')(store.get('clickCount') + 1)
+    }>{store.get('buttonText')}</button>
+  </>
+}
+
+export default MyComponentWithHooks
+
+// Or, not using React Hooks:
 class MyComponent extends React.Component<StoreProps> {
   render() {
     const {store} = this.props
@@ -25,6 +40,21 @@ import type { StoreProps } from './MyStore'
 import React from 'react'
 import Store from './MyStore'
 
+// Using React Hooks:
+function MyComponentWithHooks() {
+  // Update the component when the store updates
+  const store = Store.useStore()
+  return <>
+    You clicked the button {store.get('clickCount')} times
+    <button onClick={() =>
+      store.set('clickCount')(store.get('clickCount') + 1)
+    }>{store.get('buttonText')}</button>
+  </>
+}
+
+export default MyComponentWithHooks
+
+// Or, not using React Hooks:
 class MyComponent extends React.Component<StoreProps> {
   render() {
     const {store} = this.props
@@ -46,6 +76,21 @@ es6
 import React from 'react'
 import Store from './MyStore'
 
+// Using React Hooks:
+function MyComponentWithHooks() {
+  // Update the component when the store updates
+  const store = Store.useStore()
+  return <>
+    You clicked the button {store.get('clickCount')} times
+    <button onClick={() =>
+      store.set('clickCount')(store.get('clickCount') + 1)
+    }>{store.get('buttonText')}</button>
+  </>
+}
+
+export default MyComponentWithHooks
+
+// Or, not using React Hooks:
 class MyComponent extends React.Component {
   render() {
     const {store} = this.props
@@ -67,6 +112,21 @@ es5
 var React = require('react')
 var Store = require('./MyStore')
 
+// Using React Hooks:
+function MyComponentWithHooks() {
+  // Update the component when the store updates
+  var store = Store.useStore()
+  return <>
+    You clicked the button {store.get('clickCount')} times
+    <button onClick={function() {
+      store.set('clickCount')(store.get('clickCount') + 1)
+    }}>{store.get('buttonText')}</button>
+  </>
+}
+
+module.exports = MyComponentWithHooks
+
+// Or, not using React Hooks:
 function MyComponent(props) {
   return <>
     You clicked the button {props.store.get('clickCount')} times

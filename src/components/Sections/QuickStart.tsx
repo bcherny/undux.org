@@ -34,6 +34,7 @@ export function QuickStart() {
       <li>Automatically re-render your component whenever your store updates.</li>
       <li>Pass your store to your component as a React prop, so it's available as <InlineCode>props.store</InlineCode>.</li>
     </ul>
+    <p>If you're using <a href='https://reactjs.org/docs/hooks-intro.html'>React Hooks</a>, use Undux's <InlineCode>useStore</InlineCode> API instead of <InlineCode>withStore</InlineCode>. Like <InlineCode>withStore</InlineCode>, <InlineCode>useStore</InlineCode> will automatically re-render your component any time your store updates.</p>
     <PolyglotCode code={QuickStartStep3} filename='MyComponent' playgroundLinks={{
       TypeScript: 'https://stackblitz.com/edit/undux-quick-start-typescript?file=MyComponent.tsx',
       'JavaScript (ES6)': 'https://stackblitz.com/edit/undux-quick-start-es6?file=MyComponent.js'

@@ -12,14 +12,14 @@ let initialState: State = {
 }
 
 // Start by creating a store.
-let {withStore, Container} = createConnectedStore(initialState)
+let {withStore} = createConnectedStore(initialState)
 
 // The type of your React component's props.
 type StoreProps = {
   store: Store<State>
 }
 
-let MyComponent = withStore(class extends React.Component<StoreProps> {
+class MyComponent extends React.Component<StoreProps> {
   render() {
     // TypeScript inferred that the type of kittens is number.
     // You can read kittens back from the store.
@@ -34,7 +34,9 @@ let MyComponent = withStore(class extends React.Component<StoreProps> {
     this.props.store.get('kittens').push(2)
     // Compile Error: Property 'push' does not exist on type 'number'.
   }
-})
+}
+
+export default withStore(MyComponent)
 ```
 
 flow
@@ -52,14 +54,14 @@ let initialState: State = {
 }
 
 // Start by creating a store.
-let {withStore, Container} = createConnectedStore(initialState)
+let {withStore} = createConnectedStore(initialState)
 
 // The type of your React component's props.
 type StoreProps = {|
   store: Store<State>
 |}
 
-let MyComponent = withStore(class extends React.Component<StoreProps> {
+class MyComponent extends React.Component<StoreProps> {
   render() {
     // Flow inferred that the type of kittens is number.
     // You can read kittens back from the store.
@@ -74,7 +76,9 @@ let MyComponent = withStore(class extends React.Component<StoreProps> {
     this.props.store.get('kittens').push(2)
     // Compile Error: Property 'push' does not exist on type 'number'.
   }
-})
+}
+
+export default withStore(MyComponent)
 ```
 
 es6
@@ -83,16 +87,18 @@ import React from 'react'
 import { createConnectedStore } from 'undux'
 
 // Start by creating a store.
-let {withStore, Container} = createConnectedStore({
+let {withStore} = createConnectedStore({
   kittens: 12
 })
 
-let MyComponent = withStore(class extends React.Component {
+class MyComponent extends React.Component {
   render() {
     this.props.store.get('kittens') // 12
     this.props.store.get('oranges') // undefined
   }
-})
+}
+
+export default withStore(MyComponent)
 ```
 
 es5
@@ -105,8 +111,10 @@ var Store = undux.createConnectedStore({
   kittens: 12
 })
 
-var MyComponent = withStore(function(props) {
+function MyComponent(props) {
   props.store.get('kittens') // 12
   props.store.get('oranges') // undefined
-})
+}
+
+module.exports = Store.withStore(MyComponent)
 ```

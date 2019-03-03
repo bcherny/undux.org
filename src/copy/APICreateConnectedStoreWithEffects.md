@@ -22,9 +22,9 @@ let effects: Effects<State> = store => {
   return store
 }
 
-let {withStore, Container} = createConnectedStore(initialState, effects)
+let {useStore, withStore, Container} = createConnectedStore(initialState, effects)
 
-export {withStore, Container}
+export {useStore, withStore, Container}
 ```
 
 flow
@@ -52,9 +52,9 @@ let effects: Effects<State> = store => {
   return store
 }
 
-let {withStore, Container} = createConnectedStore(initialState, effects)
+let {useStore, withStore, Container} = createConnectedStore(initialState, effects)
 
-export {withStore, Container}
+export {useStore, withStore, Container}
 ```
 
 es6
@@ -76,9 +76,9 @@ let effects = store => {
   return store
 }
 
-let {withStore, Container} = createConnectedStore(initialState, effects)
+let {useStore, withStore, Container} = createConnectedStore(initialState, effects)
 
-export {withStore, Container}
+export {useStore, withStore, Container}
 ```
 
 es5
@@ -102,6 +102,7 @@ function effects(store) {
 
 var store = undux.createConnectedStore(initialState, effects)
 
+module.exports.useStore = store.useStore
 module.exports.withStore = store.withStore
 module.exports.Container = store.Container
 ```

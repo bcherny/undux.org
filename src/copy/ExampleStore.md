@@ -14,6 +14,7 @@ let initialState: State = {
 
 export default createConnectedStore(initialState)
 
+// Ignore this if you're using React Hooks
 export type StoreProps = {
   store: Store<State>
 }
@@ -38,6 +39,7 @@ let initialState: State = {
 
 export default createConnectedStore(initialState)
 
+// Ignore this if you're using React Hooks
 export type StoreProps = {|
   store: Store<State>
 |}
