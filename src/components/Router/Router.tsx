@@ -1,11 +1,12 @@
 import * as React from 'react'
 import { Route } from '../../datatypes'
-import { StoreProps, withStore } from '../../services/store'
+import { useStore } from '../../services/store'
 
-type Props = StoreProps & {
+type Props = {
   routes: Record<Route, React.ReactElement<any>>
 }
 
-export let Router = withStore(({ routes, store }: Props) =>
-  routes[store.get('route')[0]] || routes['']
-)
+export function Router({ routes }: Props) {
+  let store = useStore()
+  return routes[store.get('route')[0]] || routes['']
+}

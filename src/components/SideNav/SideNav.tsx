@@ -1,13 +1,14 @@
 import * as React from 'react'
 import { ExternalLink, GitHub } from 'react-feather'
 import { ROUTES } from '../../constants'
-import { withStore } from '../../services/store'
+import { useStore } from '../../services/store'
 import { DeprecatedSmall } from '../DeprecatedSmall/DeprecatedSmall'
 import { Logo } from '../Logo/Logo'
 import './SideNav.css'
 
-export let SideNav = withStore(({store}) =>
-  <nav className={'SideNav' + (store.get('isMenuOpen') ? ' -Open' : '')}>
+export function SideNav() {
+  let store = useStore()
+  return <nav className={'SideNav' + (store.get('isMenuOpen') ? ' -Open' : '')}>
     <a onClick={() => store.set('route')([''])}>
       <Logo />
     </a>
@@ -39,4 +40,4 @@ export let SideNav = withStore(({store}) =>
       <li><a href='https://github.com/bcherny/undux'><GitHub />Github<ExternalLink className='Right' /></a></li>
     </ul>
   </nav>
-)
+}

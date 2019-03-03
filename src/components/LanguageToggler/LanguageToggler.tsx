@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Language } from '../../datatypes'
-import { withStore } from '../../services/store'
+import { useStore } from '../../services/store'
 import { invert } from '../../utils'
 import { Tabs } from '../Tabs/Tabs'
 import './LanguageToggler.css'
@@ -12,12 +12,7 @@ let languages: Language[] = [
   'JavaScript (ES5)'
 ]
 
-let shortLanguages = [
-  'TS',
-  'Flow',
-  'ES6',
-  'ES5'
-]
+let shortLanguages = ['TS', 'Flow', 'ES6', 'ES5']
 
 let languageToShortLanguage: Record<Language, string> = {
   TypeScript: 'TS',
@@ -28,21 +23,24 @@ let languageToShortLanguage: Record<Language, string> = {
 
 let shortLanguageToLanguage = invert(languageToShortLanguage)
 
-export let LanguageToggler = withStore(({ store }) =>
-  <div className='LanguageToggler'>
-    <div className='HideOnMobile'>
-      <Tabs
-        activeItem={store.get('language')}
-        items={languages}
-        onClick={store.set('language')}
-      />
+export function LanguageToggler() {
+  let store = useStore()
+  return (
+    <div className='LanguageToggler'>
+      <div className='HideOnMobile'>
+        <Tabs
+          activeItem={store.get('language')}
+          items={languages}
+          onClick={store.set('language')}
+        />
+      </div>
+      <div className='ShowOnMobile'>
+        <Tabs
+          activeItem={languageToShortLanguage[store.get('language')]}
+          items={shortLanguages}
+          onClick={_ => store.set('language')(shortLanguageToLanguage[_])}
+        />
+      </div>
     </div>
-    <div className='ShowOnMobile'>
-      <Tabs
-        activeItem={languageToShortLanguage[store.get('language')]}
-        items={shortLanguages}
-        onClick={_ => store.set('language')(shortLanguageToLanguage[_])}
-      />
-    </div>
-  </div>
-)
+  )
+}

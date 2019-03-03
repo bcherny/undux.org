@@ -14,11 +14,11 @@ export let withHashSync: StoreEffects = store => {
 
   // URL hash -> Route
   observeHash().subscribe(_ =>
-    syncHashToStore(store as any, _)
+    syncHashToStore(store, _)
   )
 
   // URL hash -> Route (initial sync)
-  syncHashToStore(store as any, parseHash(window.location.hash))
+  syncHashToStore(store, parseHash(window.location.hash))
 
   return store
 }

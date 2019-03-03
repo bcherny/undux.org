@@ -12,7 +12,7 @@ import ExampleStore from '../../copy/ExampleStore.md'
 import ExampleStoreWithDerivedState from '../../copy/ExampleStoreWithDerivedState.md'
 import ExampleStoreWithNamespacedState from '../../copy/ExampleStoreWithNamespacedState.md'
 import { SectionSubheading } from '../SectionSubheading/SectionSubheading'
-import TabbedPolyglotCode from '../TabbedPolyglotCode/TabbedPolyglotCode'
+import { TabbedPolyglotCode } from '../TabbedPolyglotCode/TabbedPolyglotCode'
 
 export function Examples() {
   return <>

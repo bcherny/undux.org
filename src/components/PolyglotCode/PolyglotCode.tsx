@@ -3,18 +3,19 @@ import * as React from 'react'
 import { ExternalLink } from 'react-feather'
 import { EXTENSIONS } from '../../constants'
 import { Language } from '../../datatypes'
-import { StoreProps, withStore } from '../../services/store'
+import { useStore } from '../../services/store'
 
-type Props = StoreProps & {
+type Props = {
   code: string
   filename?: string
   playgroundLinks?: Partial<Record<Language, string>>
   shouldShowFilename?: false
 }
 
-export let PolyglotCode = withStore<Props>(({
-  code, filename, playgroundLinks, shouldShowFilename, store
-}) => {
+export function PolyglotCode({
+  code, filename, playgroundLinks, shouldShowFilename
+}: Props) {
+  let store = useStore()
   let blocks = parse(code)
   let language = store.get('language')
 
@@ -34,7 +35,7 @@ export let PolyglotCode = withStore<Props>(({
     {/* TODO: Exact link*/}
     <h4 className='MissingSub'><a href='https://github.com/bcherny/undux.org/tree/master/src/copy'>Submit a Pull Request 🙏</a></h4>
   </div>
-})
+}
 
 type LanguageAnnotation = 'ts' | 'flow' | 'es5' | 'es6'
 

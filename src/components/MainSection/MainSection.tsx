@@ -1,39 +1,27 @@
 import * as React from 'react'
-import { StoreProps, withStore } from '../../services/store'
+import { useStore } from '../../services/store'
 import './MainSection.css'
 
-type State = {
-  subscriptions: {unsubscribe(): void}[]
-}
-
-class MainSection extends React.Component<StoreProps, State> {
-  div = React.createRef<HTMLDivElement>()
-  state: State = {
-    subscriptions: [
-      this.props.store.on('route').subscribe(([toproute, subroute]) => {
-        let div = this.div.current
-        if (subroute) {
-          let e = document.getElementById(toproute + '/' + subroute)
-          if (e) {
-            e.scrollIntoView()
-          }
-          return
+export function MainSection(props: {children: React.ReactNode}) {
+  let div = React.useRef<HTMLElement>(null)
+  let store = useStore()
+  React.useEffect(() => {
+    let sub = store.on('route').subscribe(([toproute, subroute]) => {
+      if (subroute) {
+        let e = document.getElementById(toproute + '/' + subroute)
+        if (e) {
+          e.scrollIntoView()
         }
-        if (!div) {
-          return
-        }
-        div.scrollTop = 0
-      })
-    ]
-  }
-  componentWillUnmount() {
-    this.state.subscriptions.forEach(_ => _.unsubscribe())
-  }
-  render() {
-    return <section className='MainSection' ref={this.div}>
-      {this.props.children}
-    </section>
-  }
+        return
+      }
+      if (!div.current) {
+        return
+      }
+      div.current.scrollTop = 0
+    })
+    return () => sub.unsubscribe()
+  }, [div])
+  return <section className='MainSection' ref={div}>
+    {props.children}
+  </section>
 }
-
-export default withStore(MainSection)

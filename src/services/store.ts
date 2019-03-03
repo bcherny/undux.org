@@ -24,7 +24,7 @@ if (initialStateFromLocalStorage) {
   }
 }
 
-export let {Container, withStore} = createConnectedStore(
+export let {Container, useStore} = createConnectedStore(
   initialState,
   s => withHashSync(withEffects(s))
 )
@@ -32,7 +32,3 @@ export let {Container, withStore} = createConnectedStore(
 export type Store = StoreType<State>
 
 export type StoreEffects = Effects<State>
-
-export type StoreProps = {
-  store: Store
-}

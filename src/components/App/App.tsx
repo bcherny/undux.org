@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Container } from '../../services/store'
-import Page from '../Page/Page'
+import { Page } from '../Page/Page'
 import { Router } from '../Router/Router'
 import { About } from '../Sections/About'
 import { API } from '../Sections/API'
