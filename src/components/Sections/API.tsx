@@ -8,6 +8,7 @@ import APIGet from '../../copy/APIGet.md'
 import APIOn from '../../copy/APIOn.md'
 import APISet from '../../copy/APISet.md'
 import APISetPartialApplication from '../../copy/APISetPartialApplication.md'
+import APISetStableAcrossRender from '../../copy/APISetStableAcrossRender.md'
 import EffectsModelUpdate from '../../copy/EffectsModelUpdate.md'
 import EffectsRxSimple from '../../copy/EffectsRxSimple.md'
 import InstallRxJS from '../../copy/InstallRxJS.md'
@@ -59,6 +60,8 @@ export function API() {
     <PolyglotCode code={APISet} filename='' />
     <p><InlineCode>set</InlineCode> is auto-curried: call it with just a key, and get back a convenient setter function.</p>
     <PolyglotCode code={APISetPartialApplication} filename='' />
+    <p>The function returned from <InlineCode>set</InlineCode> remains stable across re-renders. This means they can be used in a <a href='https://reactjs.org/docs/hooks-overview.html'>React Hooks</a> dependencies array.</p>
+    <PolyglotCode code={APISetStableAcrossRender} filename='' />
     <SectionSubheading href='api/on'><InlineCode>store.on(key)</InlineCode></SectionSubheading>
     <p>Undux automatically updates your model and re-renders your React components for you. To do anything more complex -- like send a network request, or update another field on the store in response to a field changing -- use the <InlineCode>on</InlineCode> API.</p>
     <p>We call anything that's subscribed to a field update with the <InlineCode>on</InlineCode> API an <em>effect</em>. Effects are triggered anytime the field they're subscribed to changes.</p>
