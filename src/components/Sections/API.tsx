@@ -70,7 +70,7 @@ export function API() {
     <PolyglotCode code={EffectsModelUpdate} filename='' />
     <p><InlineCode>on</InlineCode> returns a full <a target='_blank' href='http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html'>RxJS Observable</a>, so you have fine control over how you react to a change. Effects have access to around 100 utility functions that are included with RxJS.</p>
     <PolyglotCode code={EffectsRxSimple} filename='' />
-    <p>To keep its footprint small, Undux doesn't include RxJS out of the box. Instead, Undux comes with a minimal shim that lets most peopleuse Undux without having to install additional dependencies. If you do use RxJS operators, you'll need to install RxJS as an additional dependency:</p>
+    <p>To keep its footprint small, Undux doesn't include RxJS out of the box. Instead, Undux comes with a minimal shim that lets most people use Undux without having to install additional dependencies. If you do use RxJS operators, you'll need to install RxJS as an additional dependency:</p>
     <PolyglotCode code={InstallRxJS} filename='' />
   </>
 }
